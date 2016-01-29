@@ -7,6 +7,8 @@
 
 <body>
 <?php
+
+die("OK so far");
 error_reporting(E_ALL);
 require_once("FoursquareApi.php");
 
