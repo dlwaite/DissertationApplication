@@ -8,7 +8,6 @@
 <body>
 <?php
 
-die("OK so far");
 error_reporting(E_ALL);
 require_once("FoursquareApi.php");
 
@@ -25,7 +24,7 @@ $response = $foursquare->GetPublic($endpoint,$params);
 
 // Returns a list of Venues
 // $POST defaults to false
-$venues = $foursquare->GetPublic($endpoint [,$params], $POST=false);
+$venues = $foursquare->GetPublic($endpoint ,$params, $POST=false);
 print_r($venues);
 ?>
 </body>
