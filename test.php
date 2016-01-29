@@ -7,8 +7,8 @@
 
 <body>
 <?php
-
-require_once("php-foursquare/src/FoursquareApi.php");
+error_reporting(E_ALL);
+require_once("FoursquareApi.php");
 
 $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
 
