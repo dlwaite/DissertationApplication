@@ -19,8 +19,8 @@
 <hr />
 <?php 
 	// Set your client key and secret
-	$client_key = "<your client key>";
-	$client_secret = "<your client secret>";  
+	$client_key = "OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q";
+	$client_secret = "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1";  
 	// Set your auth token, loaded using the workflow described in tokenrequest.php
 	$auth_token = "<your auth token>";
 	// Load the Foursquare API library

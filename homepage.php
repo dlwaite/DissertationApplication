@@ -205,16 +205,15 @@ line-height: 1.4;
 
 </head>
 <body>
+<form id="Homepage" action="searchResults.php" method="get">
 
 <h1>Plan your Night Out</h1>
     
-<?php
+<p class="field"><label for="searchPlace">Please Enter the Search Location:</label> 
+      <input type="text" name="searchPlace" id="searchPlace" maxlength="254" />
+</p>
 
-
-
-
-
-?>
+<p class="action"><input type="submit" name="submit" value="Search Places" /></p>
 
 </body>
 </html>
