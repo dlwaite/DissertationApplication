@@ -26,25 +26,26 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-//$count = 0;
-//foreach($_POST as $value)
-//{
-//	if(!empty($value))
-//	{
+$count = 0;
+foreach($_POST as $value)
+{
+	if(!empty($value))
+	{
 		?>
-<!--       <tr>
+       <tr>
         	<td>
-            <input type="text" value="<?php echo $value ?>">
+            ID: <input type="text" value="<?php echo $_POST["id"] ?>">
+            Name: <input type="text" value="<?php echo $_POST["name"] ?>">
         	</td>
         
         </tr>
        <?php
-//		$count++;
-//	}
+		$count++;
+	}
 	
-//	if($count == $populatedrows)
-//	break;
-//}
+	if($count == $populatedrows)
+	break;
+}
             
 
 //print_r($venues)
