@@ -29,16 +29,18 @@ $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 $data = json_decode($_POST[$venues], true);
 $numrows = count($data);
 
-echo "<table>";
-	echo "<tr><td>ID</td><td>Name</td></tr>";
-	for($i = 0; $i < $numrows; $i++)
-	{
-		echo "<tr>";
-		echo "<td>" . $data[$i]['id'] . "</td>";
-    	echo "<td>" . $data[$i]['name'] . "</td>";
-		echo "</tr>";
-	}
-	echo "</table>";
+print_r($data);
+
+//echo "<table>";
+//	echo "<tr><td>ID</td><td>Name</td></tr>";
+//	for($i = 0; $i < $numrows; $i++)
+//	{
+//		echo "<tr>";
+//		echo "<td>" . $data[$i]['id'] . "</td>";
+//    	echo "<td>" . $data[$i]['name'] . "</td>";
+//		echo "</tr>";
+//	}
+//	echo "</table>";
 
 ?>
 
