@@ -31,9 +31,7 @@ var_dump(get_defined_vars());
 
 //echo $_POST;
 
-$numrows = count($_POST);
-
-echo $numrows;
+//$numrows = count($_POST);
 
 //echo "<table>";
 //	echo "<tr><td>ID</td><td>Name</td></tr>";
