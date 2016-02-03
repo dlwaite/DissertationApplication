@@ -26,7 +26,7 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-$data = json_decode($_POST[$venues], true);
+$data = json_decode($_POST, true);
 $numrows = count($data);
 
 print_r($data);
