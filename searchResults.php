@@ -27,14 +27,13 @@ $response = $foursquare->GetPublic($endpoint,$params);
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
 extract($_POST);
-//var_dump(get_defined_vars());
+var_dump(get_defined_vars());
 
-echo $_POST
+//echo $_POST;
 
-//$data = json_decode($_POST, false);
-//$numrows = count($data);
+$numrows = count($_POST);
 
-//print_r($data);
+echo $numrows;
 
 //echo "<table>";
 //	echo "<tr><td>ID</td><td>Name</td></tr>";
