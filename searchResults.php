@@ -18,7 +18,7 @@ $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0
 $endpoint = "venues/search";
 
 // Prepare parameters
-$params = array("near"=>"" & $searchPlace & "");
+$params = array("near"=>$searchPlace);
 
 // Perform a request to a public resource
 $response = $foursquare->GetPublic($endpoint,$params);
@@ -51,8 +51,9 @@ print_r($venues);
 //mysql_free_result($queryresult);
 
 ?>
-
-<b><a href='index.php'>Back to Search Criteria</a></b>
+<br>
+<br>
+<b><a href='homepage.php'>Back to Search Criteria</a></b>
 
 </body>
 </html>
