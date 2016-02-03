@@ -26,22 +26,26 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-//$sql = "SELECT name, id FROM" & $venues & "";
-
-//$queryresult = mysql_query($sql) or die (mysql_error());
-
-//while ($row = mysql_fetch_assoc($venues)) {
-//	$id = $row['id'];
-//	$name = $row['name'];
+$count = 0;
+foreach($_POST as $value)
+{
+	if(!empty($value))
+	{
+		?>
+        <tr>
+        	<td>
+            <input type="text" value="<?php echo $value ?>">
+        	</td>
+        
+        </tr>
+        <?php
+		$count++;
+	}
 	
-//	echo "<div class=\"Venues\">";
-//	echo "<span class=\"id\">$id. </span>";
-//	echo "<span class=\"name\">$name. </span>";
-// 	echo "</div>";
-//	
-//}
-
-//mysql_free_result($venues);
+	if($count == $populatedrows)
+	break;
+}
+            
 
 //print_r($venues)
 
