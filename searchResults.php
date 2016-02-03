@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form id="Search Results" >
+<form id="Search Results" method="post">
 <?php
 $searchPlace = $_GET['searchPlace'];
 
@@ -32,7 +32,7 @@ $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 //	if(!empty($value))
 //	{
 //		?>
-<!--       <tr>
+      <tr>
         	<td>
             ID: <input type="text" value="<?php echo $_POST["id"] ?>">
             Name: <input type="text" value="<?php echo $_POST["name"] ?>">
@@ -53,7 +53,7 @@ $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 echo $_POST;
 
 ?>
--->
+
 <br>
 <br>
 <b><a href='homepage.php'>Back to Search Criteria</a></b>
