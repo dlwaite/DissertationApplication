@@ -18,7 +18,7 @@ $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0
 $endpoint = "venues/search";
 
 // Prepare parameters
-$params = array("near"=>"$searchPlace");
+$params = array("near"=>"" & $searchPlace & "");
 
 // Perform a request to a public resource
 $response = $foursquare->GetPublic($endpoint,$params);
@@ -27,26 +27,28 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // $POST defaults to false
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=false);
 
-$queryresult = mysql_query($venues) or die (mysql_error());
+print_r($venues);
 
-while ($row = mysql_fetch_assoc($queryresult)) {
-	$movieID = $row['movieID'];
-	$title = $row['title'];
-	$certificate = $row['certificate'];
-	$category = $row['category'];
-	$year = $row['year'];
-	
-	echo "<div class=\"movie\">";
-	echo "<span class=\"movieID\">$movieID. </span>";
-	echo "<span class=\"title\">$title. </span>";
-	echo "<span class=\"certificate\">$certificate. </span>";
-	echo "<span class=\"category\">$category. </span>";
-	echo "<span class=\"year\">$year. </span>";
-  	echo "</div>";
-	
-}
+//$queryresult = mysql_query($venues) or die (mysql_error());
 
-mysql_free_result($queryresult);
+//while ($row = mysql_fetch_assoc($queryresult)) {
+//	$movieID = $row['movieID'];
+//	$title = $row['title'];
+//	$certificate = $row['certificate'];
+//	$category = $row['category'];
+//	$year = $row['year'];
+	
+//	echo "<div class=\"movie\">";
+//	echo "<span class=\"movieID\">$movieID. </span>";
+//	echo "<span class=\"title\">$title. </span>";
+//	echo "<span class=\"certificate\">$certificate. </span>";
+//	echo "<span class=\"category\">$category. </span>";
+//	echo "<span class=\"year\">$year. </span>";
+// 	echo "</div>";
+	
+//}
+
+//mysql_free_result($queryresult);
 
 ?>
 
