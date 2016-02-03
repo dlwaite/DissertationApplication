@@ -26,10 +26,12 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-$data = json_decode($_POST, false);
-$numrows = count($data);
+echo $_POST
 
-print_r($data);
+//$data = json_decode($_POST, false);
+//$numrows = count($data);
+
+//print_r($data);
 
 //echo "<table>";
 //	echo "<tr><td>ID</td><td>Name</td></tr>";
