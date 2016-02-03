@@ -6,7 +6,7 @@
 </head>
 
 <body>
-
+<form id="Search Results" method="post">
 <?php
 $searchPlace = $_GET['searchPlace'];
 
