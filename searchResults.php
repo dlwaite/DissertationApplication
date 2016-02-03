@@ -26,22 +26,22 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=false);
 
-$queryresult = mysql_query($venues) or die (mysql_error());
+//$queryresult = mysql_query($venues) or die (mysql_error());
 
-while ($row = mysql_fetch_assoc($queryresult)) {
-	$id = $row['venues.id'];
-	$name = $row['venues.name'];
+while ($row = mysql_fetch_assoc($venues)) {
+	$id = $row['id'];
+	$name = $row['name'];
 	
-	echo "<div class=\"Venues\">";
-	echo "<span class=\"id\">$id. </span>";
-	echo "<span class=\"name\">$name. </span>";
- 	echo "</div>";
-	
+//	echo "<div class=\"Venues\">";
+//	echo "<span class=\"id\">$id. </span>";
+//	echo "<span class=\"name\">$name. </span>";
+// 	echo "</div>";
+//	
 }
 
-mysql_free_result($queryresult);
+mysql_free_result($venues);
 
-print_r($venues)
+//print_r($venues)
 
 ?>
 <br>
