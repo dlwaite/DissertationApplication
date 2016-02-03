@@ -26,9 +26,9 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=false);
 
-$sql = "SELECT name, id FROM" & $venues & "";
+//$sql = "SELECT name, id FROM" & $venues & "";
 
-$queryresult = mysql_query($sql) or die (mysql_error());
+//$queryresult = mysql_query($sql) or die (mysql_error());
 
 while ($row = mysql_fetch_assoc($venues)) {
 	$id = $row['id'];
@@ -41,7 +41,7 @@ while ($row = mysql_fetch_assoc($venues)) {
 //	
 }
 
-mysql_free_result($sql);
+mysql_free_result($venues);
 
 //print_r($venues)
 
