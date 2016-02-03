@@ -48,7 +48,7 @@ var_dump(get_defined_vars());
 
 <br>
 <br>
-<b><a href='homepage.php'>Back to Search Criteria</a></b>
+<b><a href='index.php'>Back to Search Criteria</a></b>
 
 </body>
 </html>
