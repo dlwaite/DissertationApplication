@@ -30,32 +30,32 @@ $venues = $foursquare->GetPublic($endpoint ,$params, $POST=false);
 $queryresult = mysql_query($venues) or die (mysql_error());
 
 while ($row = mysql_fetch_assoc($queryresult)) {
-	$one = $row['id'];
-	$two = $row['name'];
-	$three = $row['contact'];
-	$four = $row['location'];
-	$five = $row['address'];
-	$six = $row['lat'];
-	$seven = $row['lng'];
-	$eight = $row['postalCode'];
-	$nine = $row['cc'];
-	$ten = $row['city'];
-	$eleven = $row['country'];
-	$twelve = $row['formattedAddress'];
+	$id = $row['id'];
+	$name = $row['name'];
+	//$three = $row['contact'];
+	//$four = $row['location'];
+	//$five = $row['address'];
+	//$six = $row['lat'];
+	//$seven = $row['lng'];
+	//$eight = $row['postalCode'];
+	//$nine = $row['cc'];
+	//$ten = $row['city'];
+	//$eleven = $row['country'];
+	//$twelve = $row['formattedAddress'];
 	
 	echo "<div class=\"Venues\">";
-	echo "<span class=\"id\">$one. </span>";
-	echo "<span class=\"name\">$two. </span>";
-	echo "<span class=\"contact\">$three. </span>";
-	echo "<span class=\"location\">$four. </span>";
-	echo "<span class=\"address\">$five. </span>";
-	echo "<span class=\"lat\">$six. </span>";
-	echo "<span class=\"lng\">$seven. </span>";
-	echo "<span class=\"postalCode\">$eight. </span>";
-	echo "<span class=\"cc\">$nine. </span>";
-	echo "<span class=\"city\">$ten. </span>";
-	echo "<span class=\"country\">$eleven. </span>";
-	echo "<span class=\"formattedAddress\">$twelve. </span>";
+	echo "<span class=\"id\">$id. </span>";
+	echo "<span class=\"name\">$name. </span>";
+	//echo "<span class=\"contact\">$three. </span>";
+	//echo "<span class=\"location\">$four. </span>";
+	//echo "<span class=\"address\">$five. </span>";
+	//echo "<span class=\"lat\">$six. </span>";
+	//echo "<span class=\"lng\">$seven. </span>";
+	//echo "<span class=\"postalCode\">$eight. </span>";
+	//echo "<span class=\"cc\">$nine. </span>";
+	//echo "<span class=\"city\">$ten. </span>";
+	//echo "<span class=\"country\">$eleven. </span>";
+	//echo "<span class=\"formattedAddress\">$twelve. </span>";
  	echo "</div>";
 	
 }
