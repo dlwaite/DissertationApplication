@@ -26,31 +26,19 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-//$count = 0;
-//foreach($_POST as $value)
-//{
-//	if(!empty($value))
-//	{
-//		?>
-      <tr>
-        	<td>
-            ID: <input type="text" value="<?php echo $_POST["id"] ?>">
-            Name: <input type="text" value="<?php echo $_POST["name"] ?>">
-        	</td>
-        
-        </tr>
-//      <?php
-//		$count++;
-//	}
-	
-//	if($count == $populatedrows)
-//	break;
-//}
-            
+$data = json_decode($_POST[$venues], true);
+$numrows = count($data);
 
-//print_r($venues)
-
-echo $_POST;
+echo "<table>";
+	echo "<tr><td>ID</td><td>Name</td></tr>";
+	for($i = 0; $i < $numrows; $i++)
+	{
+		echo "<tr>";
+		echo "<td>" . $data[$i]['id'] . "</td>";
+    	echo "<td>" . $data[$i]['name'] . "</td>";
+		echo "</tr>";
+	}
+	echo "</table>";
 
 ?>
 
