@@ -213,6 +213,14 @@ line-height: 1.4;
       <input type="text" name="searchPlace" id="searchPlace" maxlength="254" />
 </p>
 
+<div>
+ Select Activity:
+ <select name="activity">
+   <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
+   <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
+  </select>
+</div>
+
 <p class="action"><input type="submit" name="submit" value="Search Places" /></p>
 
 </body>
