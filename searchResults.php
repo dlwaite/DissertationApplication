@@ -27,8 +27,10 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-extract($_POST);
-var_dump(get_defined_vars());
+echo $venues;
+
+//extract($_POST);
+//var_dump(get_defined_vars());
 
 //echo $_POST;
 
