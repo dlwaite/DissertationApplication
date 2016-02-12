@@ -215,7 +215,7 @@ line-height: 1.4;
 
 <div>
  Select Activity:
- <select name="activity">
+ <select name="category">
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
   </select>

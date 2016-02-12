@@ -9,7 +9,7 @@
 <form id="SearchResults" action="" method="post">
 <?php
 $searchPlace = $_GET['searchPlace'];
-$activity = $_GET['activity'];
+$activity = $_GET['category'];
 
 require_once("FoursquareApi.php");
 
@@ -19,7 +19,7 @@ $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0
 $endpoint = "venues/search";
 
 // Prepare parameters
-$params = array("near"=>$searchPlace, "categories"=>$activity);
+$params = array("near"=>$searchPlace, "categoryId"=>$activity);
 
 // Perform a request to a public resource
 $response = $foursquare->GetPublic($endpoint,$params);
