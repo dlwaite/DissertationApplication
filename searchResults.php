@@ -25,9 +25,13 @@ $params = array("near"=>$searchPlace, "categoryId"=>$activity);
 $response = $foursquare->GetPublic($endpoint,$params);
 
 // Returns a list of Venues
-$venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
+//$venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-echo $venues;
+echo $response;
+
+$presponse = json_decode($response);
+
+var_dump($presponse);
 
 //extract($_POST);
 //var_dump(get_defined_vars());
