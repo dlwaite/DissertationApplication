@@ -202,6 +202,9 @@ line-height: 1.4;
 }
 
 </style>
+    
+    <!-- Load SCRIPT.JS which will create datepicker for input field  -->
+    <script src="datePicker.js"></script>
 
 </head>
 <body>
@@ -220,6 +223,8 @@ line-height: 1.4;
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
   </select>
 </div>
+
+<p>Pick a Date: <input type="text" id="datepicker" /></p>
 
 <p class="action"><input type="submit" name="submit" value="Search Places" /></p>
 
