@@ -202,9 +202,6 @@ line-height: 1.4;
 }
 
 </style>
-    
-    <!-- Load SCRIPT.JS which will create datepicker for input field  -->
-    <script src="datePicker.js"></script>
 
 </head>
 <body>
@@ -224,7 +221,22 @@ line-height: 1.4;
   </select>
 </div>
 
-<p>Pick a Date: <input type="text" id="datepicker" /></p>
+<div style="padding-top:20px;padding-bottom:40px;width:650px;">
+		Pick a Date:
+		<br/>
+		<?php echo $datepicker->Render();?>
+		<div style="padding-top:10px;">
+			<input type="submit" value="Submit" />
+		</div>
+		<div style="padding-top:10px;">
+			<?php
+				if($datepicker->Value!=null)
+				{
+					echo "<b>Chosen Date:</b> ".$datepicker->Value;
+				}
+			?>
+		</div>		
+	</div>
 
 <p class="action"><input type="submit" name="submit" value="Search Places" /></p>
 
