@@ -203,6 +203,19 @@ line-height: 1.4;
 
 </style>
 
+<?php
+require $KoolControlsFolder."/KoolCalendar/koolcalendar.php";	
+	
+	$datepicker = new KoolDatePicker("datetimepicker"); //Create calendar object
+	$datepicker->scriptFolder = $KoolControlsFolder."/KoolCalendar";//Set scriptFolder
+	$datepicker->styleFolder="default";
+	
+	//Change date and time format
+	$datepicker->DateFormat = "M jS, Y";
+	
+	$datepicker->Init();
+?>
+
 </head>
 <body>
 <form id="Homepage" action="searchResults.php" method="get">
