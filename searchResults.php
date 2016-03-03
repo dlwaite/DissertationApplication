@@ -58,9 +58,7 @@ foreach($venues->response->venues as $venue): ?>
 
 				?>
                 <br>
-                <p class="action"><input type="submit" name="submit" value="Add to Itinerary" /></p>
-				<br>
-                <br>
+                <p class="action"><input type="submit" name="submit" value="Add to Itinerary" /></p
 				<br>
 			
 			</div>
