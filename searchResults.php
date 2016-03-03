@@ -16,7 +16,7 @@ $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
 $date = $_GET['date'];
 
-If (strlen($placeCount)>0) {
+If (strlen($placeCount)>['0']) {
 	
 require_once("FoursquareApi.php");
 
