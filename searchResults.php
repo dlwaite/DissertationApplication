@@ -43,7 +43,7 @@ foreach($venues->response->venues as $venue): ?>
 						echo '<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
 					echo '<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
 					echo $venue->name;
-					echo $venue->name->photos;
+					echo $venue->venue->photos->venue;
 					echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
@@ -60,7 +60,7 @@ foreach($venues->response->venues as $venue): ?>
 				?>
                 <br>
                 <p class="action"><input type="submit" name="submit" value="Add to Itinerary" /></p
-				<br>
+				><br>
 			
 			</div>
 			
