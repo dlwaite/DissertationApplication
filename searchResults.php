@@ -34,10 +34,10 @@ $response = $foursquare->GetPublic($endpoint,$params);
 
 $presponse = json_decode($response);
 
-var_dump($presponse, true);
+//var_dump($presponse, true);
 
 //extract($_POST);
-//var_dump(get_defined_vars());
+var_dump(get_defined_vars($presponse));
 
 //echo $_POST;
 
