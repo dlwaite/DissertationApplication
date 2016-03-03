@@ -25,14 +25,14 @@ $endpoint = "venues/search";
 $params = array("near"=>$searchPlace, "categoryId"=>$activity);
 
 // Perform a request to a public resource
-//$response = $foursquare->GetPublic($endpoint,$params);
+$response = $foursquare->GetPublic($endpoint,$params);
 
 // Returns a list of Venues
-$venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
+//$venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-echo $venues;
+echo $response;
 
-$presponse = json_decode($venues);
+$presponse = json_decode($response);
 
 var_dump($presponse);
 
