@@ -16,10 +16,8 @@ $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
 $date = $_GET['date'];
 
-$placeCount = strlen($searchPlace);
-
-echo $placeCount;
-
+If (strlen($placeCount)>0) {
+	
 require_once("FoursquareApi.php");
 
 $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
@@ -88,8 +86,13 @@ endforeach;
 
 //echo $firstArtist['name'], "\n";
 //echo $firstArtist['description'], "\n"; 
-?>
 
+}
+else {
+echo "Please enter a location before searching for venues";
+}
+
+?>
 <br>
 <br>
 <b><a href='index.php'>Back to Search Criteria</a></b>
