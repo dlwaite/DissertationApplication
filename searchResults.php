@@ -18,6 +18,8 @@ $date = $_GET['date'];
 
 If (strlen($searchPlace)>0) {
 	
+	If (strlen($activity)>0) {
+	
 require_once("FoursquareApi.php");
 
 $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
@@ -87,6 +89,10 @@ $firstArtist = current($artistList);
 echo $firstArtist['name'], "\n";
 echo $firstArtist['description'], "\n"; 
 
+}
+else {
+echo "Please select an activity before searching for venues";
+}
 }
 else {
 echo "Please enter a location before searching for venues";
