@@ -67,7 +67,6 @@ foreach($venues->response->venues as $venue): ?>
 
 require_once("Client.php");
 require_once("Session.php");
-//require 'vendor/autoload.php';
 
 $client = Ents24\Api\Client::factory(
     [
@@ -75,6 +74,13 @@ $client = Ents24\Api\Client::factory(
         'client_secret' => '06a69663a2f99b1080ffeea4c942e7a82fd0c10c;',
     ]
 );
+
+$listRequest = $client->getCommand('ListArtists');
+$artistList = $listRequest->execute();
+$firstArtist = current($artistList);
+
+echo $firstArtist['name'], "\n";
+echo $firstArtist['description'], "\n";
 
 ?>
 
