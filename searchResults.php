@@ -65,7 +65,7 @@ foreach($venues->response->venues as $venue): ?>
 			
 		<?php endforeach;
 
-require_once("https://www.github.com/Ents24/ents24-api-client.git");
+require_once("Ents24Api.php");
 
 $client = Ents24\Api\Client::factory(
     [
