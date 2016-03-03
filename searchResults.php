@@ -63,13 +63,16 @@ foreach($venues->response->venues as $venue): ?>
 			
 			</div>
 			
-		<?php endforeach; ?>
+
+<?php
+
+endforeach;
 
 //require_once("Client.php");
 //require_once("Session.php");
 
 //$client = Ents24\Api\Client::factory(
-    [
+//    [
 //        'client_id'     => 'e5cb720f71f55be8e448f3a5956ac8b9d0249c9d',
 //        'client_secret' => '06a69663a2f99b1080ffeea4c942e7a82fd0c10c;',
 //    ]
@@ -80,7 +83,8 @@ foreach($venues->response->venues as $venue): ?>
 //$firstArtist = current($artistList);
 
 //echo $firstArtist['name'], "\n";
-//echo $firstArtist['description'], "\n";
+//echo $firstArtist['description'], "\n"; 
+?>
 
 <br>
 <br>
