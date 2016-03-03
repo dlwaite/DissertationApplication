@@ -17,7 +17,7 @@ class Client extends GuzzleClient
         $config['request.options'] = ['exceptions' => false];
         $client = parent::factory($config);
 
-        $descriptionPath = realpath(__DIR__ . '/../api/index.json');
+        $descriptionPath = realpath(__DIR__ . '/ents24-api-client-master/api/index.json');
         $description = ServiceDescription::factory($descriptionPath);
 
         $client->setSession(new Session($client));

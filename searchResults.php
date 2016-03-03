@@ -67,6 +67,7 @@ foreach($venues->response->venues as $venue): ?>
 
 require_once("Client.php");
 require_once("Session.php");
+//require 'vendor/autoload.php';
 
 $client = Ents24\Api\Client::factory(
     [
