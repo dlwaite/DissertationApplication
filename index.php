@@ -21,8 +21,6 @@ session_start();
 include 'functions.php';	  // make database connection
 
 //show login status in top right of page ?>
-
-
     
 <p class="field"><label for="searchPlace">Please Enter the Search Location:</label> 
       <input type="text" name="searchPlace" id="searchPlace" maxlength="254" />
@@ -36,10 +34,7 @@ include 'functions.php';	  // make database connection
   </select>
 </div>
 
-<p class="field">
-            <label for="date">Select Date</label> 
-            <input type="date" name="date" id="date" maxlength="60" />
-        </p>
+
 
 
 <p class="action"><input type="submit" name="submit" value="Search Places" /></p>
