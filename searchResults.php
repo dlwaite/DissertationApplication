@@ -43,7 +43,6 @@ foreach($venues->response->venues as $venue): ?>
 						echo '<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
 					echo '<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
 					echo $venue->name;
-					echo $venue->venue->photos->venue;
 					echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
@@ -54,7 +53,7 @@ foreach($venues->response->venues as $venue): ?>
 						}
 					}
 
-                    echo '<b><i>Location Information</i></b> :'.$venue->location->lat." latitude , ".$venue->location->lng." longitude";
+                    echo '<b><i>Location Information</i></b> :'.$venue->venue->location->lat." latitude , ".$venue->venue->location->lng." longitude";
 					
 
 				?>
