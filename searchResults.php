@@ -35,7 +35,6 @@ foreach($venues->response->venues as $venue): ?>
 			<div class="venue">
 				<?php 
 					
-
 					if(isset($venue->categories['0']))
 					{
 						echo '<image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/>';
@@ -46,8 +45,6 @@ foreach($venues->response->venues as $venue): ?>
 					echo $venue->name;
 					echo "</b></a><br/>";
 					
-					
-						
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
@@ -55,13 +52,8 @@ foreach($venues->response->venues as $venue): ?>
 							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
 						}
 					}
-					
-					if(property_exists($venue->hereNow,"count"))
-					{
-							echo ''.$venue->hereNow->count ." people currently here <br/> ";
-					}
 
-                    echo '<b><i>History</i></b> :'.$venue->stats->usersCount." visitors , ".$venue->stats->checkinsCount." visits ";
+                    echo '<b><i>Information</i></b> :'.$venue->lat." visitors , ".$venue->long." visits ";
 					
 				?>
 			
