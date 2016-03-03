@@ -16,6 +16,10 @@ $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
 $date = $_GET['date'];
 
+$placeCount = strlen($searchPlace);
+
+echo $placeCount;
+
 require_once("FoursquareApi.php");
 
 $foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
