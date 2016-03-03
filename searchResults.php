@@ -35,7 +35,7 @@ $response = $foursquare->GetPublic($endpoint,$params);
 $presponse = json_decode($response);
 $obj = var_dump($presponse);
 
-print $obj->{'categories'};
+//print $obj->{'categories'};
 
 //extract($_POST);
 //var_dump(get_defined_vars($presponse));
