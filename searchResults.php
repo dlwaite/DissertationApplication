@@ -65,7 +65,8 @@ foreach($venues->response->venues as $venue): ?>
 			
 		<?php endforeach;
 
-require_once("Ents24Api.php");
+require_once("Client.php");
+require_once("Session.php");
 
 $client = Ents24\Api\Client::factory(
     [
