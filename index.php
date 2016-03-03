@@ -31,6 +31,7 @@ include 'functions.php';	  // make database connection
 <div>
  Select Activity:
  <select name="category">
+   <option value="">Please Select</option>
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
   </select>

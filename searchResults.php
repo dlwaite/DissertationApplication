@@ -14,7 +14,7 @@
 
 $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
-//$date = $_GET['date'];
+$date = $_GET['date'];
 
 require_once("FoursquareApi.php");
 
@@ -53,13 +53,13 @@ foreach($venues->response->venues as $venue): ?>
 						}
 					}
 
-                    echo '<b><i>Information</i></b> :'.$venue->location->lat." visitors , ".$venue->location->lng." visits ";
+                    echo '<b><i>Information</i></b> :'.$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 					
 				?>
 			
 			</div>
 			
-		<?php endforeach; ?>
+		<?php endforeach;
 
 
 
