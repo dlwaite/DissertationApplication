@@ -32,11 +32,13 @@ $response = $foursquare->GetPublic($endpoint,$params);
 // Returns a list of Venues
 //$venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
-$presponse = json_decode($response, true);
-print_r($presponse['name']);
-//var_dump($presponse);
+//$presponse = json_decode($response, true);
 
-//print $obj->{'categories'};
+var_dump(json_decode($response));
+var_dump(json_decode($response, true));
+
+
+//var_dump($presponse);
 
 //extract($_POST);
 //var_dump(get_defined_vars($presponse));
