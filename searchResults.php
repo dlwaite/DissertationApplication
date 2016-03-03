@@ -29,34 +29,53 @@ $params = array("near"=>$searchPlace, "categoryId"=>$activity);
 // Perform a request to a public resource
 $response = $foursquare->GetPublic($endpoint,$params);
 
-// Returns a list of Venues
-//$venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
+$venues = json_decode($response);
 
-//$presponse = json_decode($response, true);
+foreach($venues->response->venues as $venue): ?>
+			<div class="venue">
+				<?php 
+					
 
-var_dump(json_decode($response));
-var_dump(json_decode($response, true));
+					if(isset($venue->categories['0']))
+					{
+						echo '<image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/>';
+					}
+					else
+						echo '<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
+					echo '<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
+					echo $venue->name;
+					echo "</b></a><br/>";
+					
+					
+						
+                    if(isset($venue->categories['0']))
+                    {
+						if(property_exists($venue->categories['0'],"name"))
+						{
+							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
+						}
+					}
+					
+					if(property_exists($venue->hereNow,"count"))
+					{
+							echo ''.$venue->hereNow->count ." people currently here <br/> ";
+					}
+
+                    echo '<b><i>History</i></b> :'.$venue->stats->usersCount." visitors , ".$venue->stats->checkinsCount." visits ";
+					
+				?>
+			
+			</div>
+			
+		<?php endforeach; ?>
 
 
-//var_dump($presponse);
 
-//extract($_POST);
-//var_dump(get_defined_vars($presponse));
 
-//echo $_POST;
 
-//$numrows = count($_POST);
 
-//echo "<table>";
-//	echo "<tr><td>ID</td><td>Name</td></tr>";
-//	for($i = 0; $i < $numrows; $i++)
-//	{
-//		echo "<tr>";
-//		echo "<td>" . $data[$i]['id'] . "</td>";
-//    	echo "<td>" . $data[$i]['name'] . "</td>";
-//		echo "</tr>";
-//	}
-//	echo "</table>";
+
+
 
 //require_once("https://www.github.com/Ents24/ents24-api-client.git");
 
