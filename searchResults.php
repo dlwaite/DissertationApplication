@@ -34,7 +34,7 @@ $venues = $foursquare->GetPublic($endpoint ,$params, $POST=true);
 
 $presponse = json_decode($response);
 
-echo $presponse;
+var_dump($presponse);
 
 //extract($_POST);
 //var_dump(get_defined_vars());
