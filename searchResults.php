@@ -14,7 +14,7 @@ include 'functions.php';	  // make database connection
 
 $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
-$date = $_GET['date'];
+//$date = $_GET['date'];
 
 require_once("FoursquareApi.php");
 
