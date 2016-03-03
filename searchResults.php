@@ -53,7 +53,7 @@ foreach($venues->response->venues as $venue): ?>
 						}
 					}
 
-                    echo '<b><i>Location Information</i></b> :'.$venue->venue->location->lat." latitude , ".$venue->venue->location->lng." longitude";
+                    echo '<b><i>Location Information</i></b> :'.$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 					
 
 				?>
