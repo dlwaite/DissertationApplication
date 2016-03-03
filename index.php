@@ -20,10 +20,8 @@ session_start();
 include 'database_mysqli_conn.php';	  // make database connection
 include 'functions.php';	  // make database connection
 
-?>
-
 //show login status in top right of page ?>
-        <div align="right"><?php echo loginStatus()?></div> 
+<div align="right"><?php echo loginStatus()?></div> 
 
     
 <p class="field"><label for="searchPlace">Please Enter the Search Location:</label> 
