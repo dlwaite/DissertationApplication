@@ -54,10 +54,13 @@ foreach($venues->response->venues as $venue): ?>
                     echo '<b><i>Location Information</i></b> :'.$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 					
 				?>
+                
+                <br>
+				<br>
 			
 			</div>
 			
-		<?php endforeach; ?>
+		<?php endforeach;
 
 
 
