@@ -22,6 +22,7 @@
             
             <?php
 			include 'database_conn.php';	  // make db connection
+			
 				$sql = "SELECT * FROM tbl_users";
 	
 	// store the result 
