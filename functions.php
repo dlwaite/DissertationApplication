@@ -40,7 +40,7 @@ function logIn () {
 		 die (mysql_error());  
 	}
 	else {																	// else if the fields are not left empty
-		$sql = "SELECT password FROM tbl_users WHERE emailAddress = ?";		// select the password and salt from the users table where the username matches the username entered
+		$sql = "SELECT password FROM tbl_users WHERE emailAddress = $username";		// select the password and salt from the users table where the username matches the username entered
 
 		$stmt = mysqli_prepare($conn, $sql); 
 		
