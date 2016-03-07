@@ -35,39 +35,57 @@ $response = $foursquare->GetPublic($endpoint,$params);
 
 $venues = json_decode($response);
 
+// create a table
+echo "<table border='1'>";
+// with headings
+echo "<tr><th></th><th>Name</th><th>Category</th><th>Location: Latitude</th><th>Location: Longitude</th></tr>";
+
 foreach($venues->response->venues as $venue): ?>
 			<div class="venue">
 				<?php 
 					
 					if(isset($venue->categories['0']))
 					{
-						echo '<image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/>';
+						echo "<tr><td>";
+						echo $row['<image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/>'];
+						echo "</td><td>";
 					}
 					else
-						echo '<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
-					echo '<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
+						echo "<tr><td>";
+						echo $row['<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>'];
+						echo "</td><td>";
+					echo "<tr><td>";
+					echo $row['<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>'];
+					echo "</td><td>";
+					echo "<tr><td>";
 					echo $venue->name;
-					echo "</b></a><br/>";
+					echo "</td><td>";
+					//echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
+							echo "<tr><td>";
+							echo $row[' <i> '.$venue->categories['0']->name.'</i><br/>'];
+							echo "</td><td>";
 						}
 					}
-
-                    echo '<b><i>Location Information</i></b> :'.$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 					
-
+					echo "<tr><td>";
+                    echo $row['.$venue->location->lat.'];
+					echo "</td><td>";
+					echo "<tr><td>";
+					echo $row['.$venue->location->lng.'];
+					echo "</td><td>";
+					
+				echo "<tr><td>";
+				?><p class="action"><input type="submit" name="submit" value="Add to Itinerary" /></p><?php
+				echo "</td></tr>";				
 				?>
-                <br>
-                <p class="action"><input type="submit" name="submit" value="Add to Itinerary" /></p
-				><br>
-			
 			</div>
-			
 <?php endforeach;
+echo "</table>";
 
 
 require_once("Client.php");
