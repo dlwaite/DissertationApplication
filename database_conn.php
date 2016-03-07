@@ -11,8 +11,11 @@ $dbusername = constant("DB_USER"); // Mysql username
 $dbpassword = constant("DB_PASS"); // Mysql password 
 $db_name = constant("DB_NAME"); // Database name 
 
-$mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
-mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
+$dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+$dbh = new PDO($dsn, DB_USER, DB_PASS);
+
+//$mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
+//mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
 
 
 //Root User: adminQTSXp5f
