@@ -86,6 +86,7 @@ $_SESSION['cart'] = $cart;
 
 <?php
 echo itineraryStatus();
+print $cart
 ?>
 
 </div>

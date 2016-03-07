@@ -140,7 +140,7 @@ function itineraryContents() {
 		$output .= '</table>';
 		$output .= '</form>';
 	} else {
-		$output .= '<p>You shopping cart is empty.</p>';
+		$output .= '<p>Your itinerary is empty.</p>';
 	}
 	return $output;
 }

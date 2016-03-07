@@ -48,7 +48,6 @@ foreach($venues->response->venues as $venue): ?>
 						
 					echo'<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
 					echo $venue->name;
-					echo $venue->id;
 					echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
