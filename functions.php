@@ -90,7 +90,6 @@ function itineraryContents() {
 		foreach ($items as $item) {
 			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 		}
-		$output .= '<form action="itinerary.php?action=update" method="post" id="cart">';
 		$output .= '<table>';
 		foreach ($contents as $id=>$qty) {
 			
@@ -98,7 +97,6 @@ function itineraryContents() {
 
 			$foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
 			
-			// Searching for venues nearby Montreal, Quebec
 			$endpoint = "venues/VENUE_ID";
 			
 			// Prepare parameters
@@ -119,7 +117,6 @@ function itineraryContents() {
 					else
 						$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
 						
-					$output .= '<td><a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b></td>';
 					$output .= '<td>'. $venue->name .'</td>';
 					$output .= '<td>'. $venue->id .'</td>';
 					
@@ -138,7 +135,6 @@ function itineraryContents() {
 				endforeach;
 		}
 		$output .= '</table>';
-		$output .= '</form>';
 	} else {
 		$output .= '<p>Your itinerary is empty.</p>';
 	}
