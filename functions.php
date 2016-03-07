@@ -41,22 +41,17 @@ function logIn () {
 	}
 	else {																	// else if the fields are not left empty
 		$sql = "SELECT password, firstName FROM tbl_users WHERE emailAddress = ?";		// select the password and salt from the users table where the username matches the username entered
-		
-		//$queryresult = mysql_query($sql) or die (mysql_error());
-		
-		//if (mysql_num_rows($queryresult) > 0) {
-		//	$userDetailsrow = mysql_fetch_array($queryresult);
-		//	$firstName = $userDetailsrow['firstName'];
-		//	$passwordFromDB = $userDetailsrow['password'];
 
 		$stmt = mysqli_prepare($conn, $sql); 
 		
-		mysqli_stmt_bind_param($stmt, "s", $username);
+		//mysqli_stmt_bind_param($stmt, "s", $username);
 		mysqli_stmt_execute($stmt); 
 		
-		mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
+		//mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
 
 		if (mysqli_stmt_fetch($stmt)) {										// if there was a result
+		$passwordfromDB = ['password'];
+		$firstName = ['firstName'];
 	
 			if ($password == $passwordfromDB) {								// if the passwords match
 				$_SESSION['firstName'] = $firstName;						// store the value of the user logged in in the session
@@ -72,8 +67,6 @@ function logIn () {
 		}
 		else { 																// else if there was not a result from the search
 			echo "<p>Sorry that username is not in our system.</p> ";		// create an error message
-			echo $username;
-			echo $password;
 			echo "<a href = \"login.php\">Please try again.</a>";			// with a link back to the login page
 			die (mysql_error());
 		}
