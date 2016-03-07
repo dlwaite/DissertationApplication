@@ -9,8 +9,8 @@
 <body>
 <form id="SearchResults" action="" method="post">
 <?php
-//include 'datasbase_conn.php';	  // make database connection
-//include 'functions.php';	  // make database connection
+include 'database_conn.php';	  // make database connection
+include 'functions.php';	  // make database connection
 
 $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
@@ -67,10 +67,8 @@ foreach($venues->response->venues as $venue): ?>
 			
 			</div>
 			
+<?php endforeach;
 
-<?php
-
-endforeach;
 
 require_once("Client.php");
 require_once("Session.php");
@@ -88,6 +86,8 @@ $firstArtist = current($artistList);
 
 echo $firstArtist['name'], "\n";
 echo $firstArtist['description'], "\n"; 
+
+
 
 }
 else {
