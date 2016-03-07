@@ -91,62 +91,58 @@ function itineraryContents() {
 			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 		}
 		$output .= '<form action="itinerary.php?action=update" method="post" id="cart">';
-		$output .= '<table>';		
-		
-		foreach ($contents as $id) {
+		$output .= '<table>';
+		foreach ($contents as $id=>$qty) {
+			
 			require_once("FoursquareApi.php");
 
-			$foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", 		"VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
-
-		// Searching for venues nearby Montreal, Quebec
-		$endpoint = "venues/search";
-
-		// Prepare parameters
-		$params = array("VENUE_ID"=>$id);
-
-		// Perform a request to a public resource
-		$response = $foursquare->GetPublic($endpoint,$params);
-
-		$venues = json_decode($response);
-		
-		foreach($venues->response->venues as $venue): ?>
-			<div class="venue">
-				<?php 
-					
-					if(isset($venue->categories['0']))
+			$foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
+			
+			// Searching for venues nearby Montreal, Quebec
+			$endpoint = "venues/search";
+			
+			// Prepare parameters
+			$params = array("id"=>$qty);
+			
+			// Perform a request to a public resource
+			$response = $foursquare->GetPublic($endpoint,$params);
+			
+			$venues = json_decode($response);
+			
+			foreach($venues->response->venues as $venue):
+			
+			$output .= '<tr>';			
+			if(isset($venue->categories['0']))
 					{
-						echo '<image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/>';
+						$output .= '<td><image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/></td>';
 					}
 					else
-						'<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
+						$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
 						
-					echo'<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
-					echo $venue->name;
-					echo $venue->id;
-					echo "</b></a><br/>";
+					$output .= '<td><a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b></td>';
+					$output .= '<td>'. $venue->name .'</td>';
+					$output .= '<td>'. $venue->id .'</td>';
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
+							$output .= '<td>' .$venue->categories['0']->name.'</td><br/>';
 						}
 					}
-
-                    echo "Location Information: ".$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 					
-				echo "<div class=\"row\">
-                <a href=\"itinerary.php?action=add&id=".$venue->id."\">Add to Itinerary</a>
-				<div class=\"cell\">&nbsp;</div>
-						    <div class=\"cell\">
-						    </div>
-						  </div>";
-						  ?>
-			
-			</div>
-			
-		<?php endforeach;
+					$output .= '<td>'. $venue->location->lat .'</td>';
+					$output .= '<td>'. $venue->location->lng .'</td>';
+					$output .= '</tr>';
+						  
+				endforeach;
 		}
+		$output .= '</table>';
+		$output .= '</form>';
+	} else {
+		$output .= '<p>You shopping cart is empty.</p>';
 	}
+	return $output;
 }
+
 ?>
