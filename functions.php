@@ -23,8 +23,8 @@ function loginStatus () {
 
 function logIn () {
 	// check to see that a password and username was entered in the log in page and they were not left empty and request the values
-	$username = isset($_REQUEST['username']);
-	$password = isset($_REQUEST['password']);
+	$username = isset($_REQUEST['username']) ? $_REQUEST['username'] : null;
+	$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : null;
 
 	include 'database_conn.php';	  // make db connection
 
@@ -66,8 +66,8 @@ function logIn () {
 		else { 																// else if there was not a result from the search
 			echo "<p>Sorry that username is not in our system.</p> ";		// create an error message
 			echo $username;
-			echo "<a href = \"login.php\">Please try again.</a>";			// with a link back to the login page
 			echo $password;
+			echo "<a href = \"login.php\">Please try again.</a>";			// with a link back to the login page
 			die (mysql_error());
 		}
 	}
