@@ -40,18 +40,16 @@ function logIn () {
 		 die (mysql_error());  
 	}
 	else {																	// else if the fields are not left empty
-		$sql = "SELECT password, firstName FROM tbl_users WHERE emailAddress = $username";		// select the password and salt from the users table where the username matches the username entered
+		$sql = "SELECT password, firstName FROM tbl_users WHERE emailAddress = ?";		// select the password and salt from the users table where the username matches the username entered
 
 		$stmt = mysqli_prepare($conn, $sql); 
 		
-		//mysqli_stmt_bind_param($stmt, "s", $username);
+		mysqli_stmt_bind_param($stmt, "s", $username);
 		mysqli_stmt_execute($stmt); 
 		
-		//mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
+		mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
 
 		if (mysqli_stmt_fetch($stmt)) {										// if there was a result
-		$passwordfromDB = ['password'];
-		$firstName = ['firstName'];
 	
 			if ($password == $passwordfromDB) {								// if the passwords match
 				$_SESSION['firstName'] = $firstName;						// store the value of the user logged in in the session

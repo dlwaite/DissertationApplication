@@ -19,7 +19,7 @@ session_start();
 		include 'functions.php'; 			// include functions
 		include 'database_conn.php';	  // make db connection
 		
-		echo logIn ();						// run the logIn fuction
+	echo logIn ();						// run the logIn fuction
 	?>
     <br />
     <p><a href="index.php">Back to Homepage</a></p>
