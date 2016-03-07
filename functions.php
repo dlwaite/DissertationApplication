@@ -26,6 +26,8 @@ function logIn () {
 	$username = isset($_REQUEST['username']) ? $_REQUEST['username'] : null;
 	$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : null;
 
+	include 'database_conn.php';
+
 	if (empty($username)) {													// if the username field was left empty then echo out an error and 
 		 echo "<p>You must enter an E-Mail Address.</p> ";							// inlcude a button that allows the user to return to the previous page
 		 echo "<a href = \"login.php?username=$username\">Please enter a username.</a>";	
@@ -38,23 +40,23 @@ function logIn () {
 		 die (mysql_error());  
 	}
 	else {																	// else if the fields are not left empty
-		$sql = "SELECT password, firstName FROM tbl_users WHERE emailAddress = $username";		// select the password and salt from the users table where the username matches the username entered
+		$sql = "SELECT password, firstName FROM tbl_users WHERE emailAddress = ?";		// select the password and salt from the users table where the username matches the username entered
 		
-		$queryresult = mysql_query($sql) or die (mysql_error());
+		//$queryresult = mysql_query($sql) or die (mysql_error());
 		
-		if (mysql_num_rows($queryresult) > 0) {
-			$userDetailsrow = mysql_fetch_array($queryresult);
-			$firstName = $userDetailsrow['firstName'];
-			$passwordFromDB = $userDetailsrow['password'];
+		//if (mysql_num_rows($queryresult) > 0) {
+		//	$userDetailsrow = mysql_fetch_array($queryresult);
+		//	$firstName = $userDetailsrow['firstName'];
+		//	$passwordFromDB = $userDetailsrow['password'];
 
-		//$stmt = mysqli_prepare($conn, $sql); 
+		$stmt = mysqli_prepare($conn, $sql); 
 		
-		//mysqli_stmt_bind_param($stmt, "s", $username);
-		//mysqli_stmt_execute($stmt); 
+		mysqli_stmt_bind_param($stmt, "s", $username);
+		mysqli_stmt_execute($stmt); 
 		
-		//mysqli_stmt_bind_result($stmt, $passwordfromDB);
+		mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
 
-		//if (mysqli_stmt_fetch($stmt)) {										// if there was a result
+		if (mysqli_stmt_fetch($stmt)) {										// if there was a result
 	
 			if ($password == $passwordfromDB) {								// if the passwords match
 				$_SESSION['firstName'] = $firstName;						// store the value of the user logged in in the session
