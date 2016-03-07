@@ -17,17 +17,17 @@ session_start();
         <h1>Admin Page</h1>
         
 		<?php
+		
+		include 'database_conn.php';										// include database connection
+		include 'functions.php';											// include functions
+		
         if (isset($_SESSION['logged-in']) && ($_SESSION['logged-in'])) {		// if someone is logged in and the logged in session is active
 			$username = $_SESSION['username'];									// create the username variable with the username which is logged in
-			include 'database_conn.php';										// include database connection
-			include 'functions.php';											// include functions
-			?>
-			
+			?>	
 			<div align="right">
             	<!-- echo out the username of who is logged in with a log out button next to it -->
 				<?php echo "<p>Hello user: $username"; echo "<input type=\"submit\" value=\"Log Out\" formaction=\"logout.php\"/></p>"; ?>
 			</div>
-			
 			<?php
 			echo "<a href=\"index.php\">Homepage</a>";							// 	include links to home page and edit events page
 			echo "<br>";
@@ -40,13 +40,7 @@ session_start();
         }
         ?>
     </form>
- 
-    <!-- add the w3 validator to the bottom right of the page -->
-    <div align="right"><p>
-        <a href="http://validator.w3.org/check?uri=referer"><img
-        src="http://www.w3.org/Icons/valid-xhtml10"
-        alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-    </p></div>
+
     
 </body>
 </html>

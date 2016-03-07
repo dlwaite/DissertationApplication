@@ -1,5 +1,4 @@
 <?php
-
 function loginStatus () {
 	// if the user was logged in and there was a logged in session in the session
 	if (isset($_SESSION['logged-in']) && ($_SESSION['logged-in'])) {
