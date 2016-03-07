@@ -48,6 +48,7 @@ foreach($venues->response->venues as $venue): ?>
 						
 					echo'<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
 					echo $venue->name;
+					echo $venue->VENUE_ID;
 					echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
@@ -60,10 +61,13 @@ foreach($venues->response->venues as $venue): ?>
 
                     echo "Location Information: ".$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 
-				?>
-                <br>
-                <p class="action"><input type="submit" name="submit" value="Add to Itinerary" /></p
-				><br>
+				echo "<div class=\"row\">
+                <a href=\"itinerary.php?action=add&id=" . $venue->VENUE_ID."\">Add to Itinerary</a>
+				<div class=\"cell\">&nbsp;</div>
+						    <div class=\"cell\">
+						    </div>
+						  </div>";
+						  ?>
 			
 			</div>
 			
@@ -86,8 +90,6 @@ $firstArtist = current($artistList);
 
 echo $firstArtist['name'], "\n";
 echo $firstArtist['description'], "\n"; 
-
-
 
 }
 else {

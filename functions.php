@@ -70,4 +70,68 @@ function logIn () {
 	}
 }
 
+function cartStatus() {
+	$cart = $_SESSION['cart'];
+	if (!$cart) {
+		return '<p><a href="./shoppingcart.php">Your Basket:</a> 0</p>';
+	} else {
+		// Parse the cart session variable
+		$items = explode(',',$cart);
+		$s = (count($items) > 1) ? 's':'';
+		return '<p><a href="./shoppingcart.php">Your Basket:</a>' .count($items). ' item' .$s.'</p>';
+	}
+}
+
+function cartContents() {
+	$cart = $_SESSION['cart'];
+	if ($cart) {
+		$items = explode(',',$cart);
+		$contents = array();
+		foreach ($items as $item) {
+			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+		}
+		$output .= '<form action="shoppingcart.php?action=update" method="post" id="cart">';
+		$output .= '<table>';		
+		
+		foreach ($contents as $id) {
+			require_once("FoursquareApi.php");
+
+			$foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", 		"VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
+
+		// Searching for venues nearby Montreal, Quebec
+		$endpoint = "venues/search";
+
+		// Prepare parameters
+		$params = array("VENUE_ID"=>$id);
+
+		// Perform a request to a public resource
+		$response = $foursquare->GetPublic($endpoint,$params);
+
+		$venues = json_decode($response);
+		
+		foreach($venues->response->venues as $venue): ?>
+			<div class="venue">
+				<?php 
+				$output .= '<tr>';
+				$output .= '<td>Name: '. $venue->name .'</td>';
+				if(isset($venue->categories['0']))
+                    {
+						if(property_exists($venue->categories['0'],"name"))
+						{
+							$output .= '<td>Category: '.$venue->categories['0']->name.'</td>';
+						}
+					
+		$output .= '</tr>';
+		$output .= '</table>';
+		$output .= '<div><button type="submit">Update cart</button></div>';
+		$output .= '</form>';
+	} else {
+		$output .= '<p>You shopping cart is empty.</p>';
+	}
+	return $output;
+
+endforeach;
+		}
+	}
+}
 ?>
