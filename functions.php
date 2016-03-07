@@ -90,7 +90,7 @@ function itineraryContents() {
 		foreach ($items as $item) {
 			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 		}
-		//$output .= '<table>';
+		$output .= '<table>';
 		foreach ($contents as $id=>$qty) {
 			
 			require_once("FoursquareApi.php");
@@ -107,40 +107,42 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
+			print_r($venues);
+			
 			foreach($venues->response->venues as $venue):
 			
 			echo $venue->name;
 			
-			//$output .= '<tr>';			
-			//if(isset($venue->categories['0']))
-			//		{
-			//			$output .= '<td><image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/></td>';
-			//		}
-			//		else
-			//			$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
+			$output .= '<tr>';			
+			if(isset($venue->categories['0']))
+					{
+						$output .= '<td><image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/></td>';
+					}
+					else
+						$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
 						
-			//		$output .= '<td>'. $venue->name .'</td>';
-			//		$output .= '<td>'. $venue->id .'</td>';
+					$output .= '<td>'. $venue->name .'</td>';
+					$output .= '<td>'. $venue->id .'</td>';
 					
-            //        if(isset($venue->categories['0']))
-             //       {
-			//			if(property_exists($venue->categories['0'],"name"))
-			//			{
-			//				$output .= '<td>' .$venue->categories['0']->name.'</td><br/>';
-			//			}
-			//		}
+                    if(isset($venue->categories['0']))
+                    {
+						if(property_exists($venue->categories['0'],"name"))
+						{
+							$output .= '<td>' .$venue->categories['0']->name.'</td><br/>';
+						}
+					}
 					
-			//		$output .= '<td>'. $venue->location->lat .'</td>';
-			//		$output .= '<td>'. $venue->location->lng .'</td>';
-			//		$output .= '</tr>';
+					$output .= '<td>'. $venue->location->lat .'</td>';
+					$output .= '<td>'. $venue->location->lng .'</td>';
+					$output .= '</tr>';
 						  
 				endforeach;
 		}
-		//$output .= '</table>';
+		$output .= '</table>';
 	} else {
 		$output .= '<p>Your itinerary is empty.</p>';
 	}
-	//return $output;
+	return $output;
 }
 
 ?>
