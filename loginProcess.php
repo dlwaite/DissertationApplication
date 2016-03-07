@@ -17,6 +17,7 @@ session_start();
 		<h1>Log In</h1>
 		<?php
 		include 'functions.php'; 			// include functions
+		include 'database_conn.php';	  // make db connection
 		
 		echo logIn ();						// run the logIn fuction
 	?>
