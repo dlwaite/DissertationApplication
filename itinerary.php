@@ -3,7 +3,6 @@
 include('database_conn.php');
 include('functions.php');
 
-
 // Start the session
 session_start();
 
@@ -36,6 +35,35 @@ switch ($action) {
 		$cart = $newcart;
 	}
 	break;
+	case 'update':
+	if ($cart) {
+		$newcart = '';
+		foreach ($_POST as $key=>$value) {
+			if (stristr($key,'qty')) {
+				$id = str_replace('qty','',$key);
+				$items = ($newcart != '') ? explode(',',$newcart) : explode(',',$cart);
+				$newcart = '';
+				foreach ($items as $item) {
+					if ($id != $item) {
+						if ($newcart != '') {
+							$newcart .= ','.$item;
+						} else {
+							$newcart = $item;
+						}
+					}
+				}
+				for ($i=1;$i<=$value;$i++) {
+					if ($newcart != '') {
+						$newcart .= ','.$id;
+					} else {
+						$newcart = $id;
+					}
+				}
+			}
+		}
+	}
+	$cart = $newcart;
+	break;
 }
 $_SESSION['cart'] = $cart;
 
@@ -57,7 +85,7 @@ $_SESSION['cart'] = $cart;
 <h1>Your Itinerary</h1>
 
 <?php
-echo cartStatus();
+echo itineraryStatus();
 ?>
 
 </div>
@@ -67,7 +95,7 @@ echo cartStatus();
 <h1>Please check your Itinerary...</h1>
 
 <?php
-echo cartContents();
+echo itineraryContents();
 ?>
 
 <p>|| <a href="./homepage.php">Add Further Venues</a> || <a href="./proceed.php">Save to Account Itinerary</a> ||

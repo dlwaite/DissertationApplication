@@ -60,7 +60,7 @@ foreach($venues->response->venues as $venue): ?>
 					}
 
                     echo "Location Information: ".$venue->location->lat." latitude , ".$venue->location->lng." longitude";
-
+					
 				echo "<div class=\"row\">
                 <a href=\"itinerary.php?action=add&id=".$venue->id."\">Add to Itinerary</a>
 				<div class=\"cell\">&nbsp;</div>

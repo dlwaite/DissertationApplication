@@ -70,7 +70,7 @@ function logIn () {
 	}
 }
 
-function cartStatus() {
+function itineraryStatus() {
 	$cart = $_SESSION['cart'];
 	if (!$cart) {
 		return '<p><a href="./itinerary.php">Your Itinerary:</a> 0</p>';
@@ -82,7 +82,7 @@ function cartStatus() {
 	}
 }
 
-function cartContents() {
+function itineraryContents() {
 	$cart = $_SESSION['cart'];
 	if ($cart) {
 		$items = explode(',',$cart);
@@ -128,10 +128,9 @@ function cartContents() {
 	} else {
 		$output .= '<p>You shopping cart is empty.</p>';
 	}
-	return $output;
-
-endforeach;
+	endforeach;
 		}
 	}
+	return $output;	
 }
 ?>
