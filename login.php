@@ -18,31 +18,7 @@
                 <label for="password">Password</label>: 
                 <input type="password" name="password" id="password" maxlength="16" /></p>
             <div><p class="action"><input type="submit" name="submit" value="Log In" /></p></div>
-            <p><a href="index.php">Back to Homepage</a></p>
-            
-            <?php
-			include 'database_conn.php';	  // make db connection
-			
-				$sql = "SELECT * FROM tbl_users";
-	
-	// store the result 
-	$queryresult = mysql_query($sql) or die (mysql_error());
-	// create a table
-	echo "<table border='1'>";
-	// with headings
-	echo "<tr><th>userID</th><th>Email</th><th>password</th></tr>";
-	while($row = mysql_fetch_array($queryresult)){			// whilst there is another record that matched the query result
-		echo "<tr><td>";									// echo out the record under
-		echo $row['userID'];							// the heading with the 
-		echo "</td><td>";									// data that is stored
-		echo $row['emailAddress'];						// within the database
-		echo "</td><td>";
-		echo $row['password'];
-		echo "</td></tr>";
-	}
-	echo "</table>";									// close the table
-	?>
-            
+            <p><a href="index.php">Back to Homepage</a></p>            
             
 	</form>
 
