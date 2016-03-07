@@ -56,6 +56,8 @@ body {
 </style>
 <title>Itinerary Page</title>
 </head>
+<body>
+<form id="Itineray" action="" method="post">
 
 <div id="shoppingcart">
 
