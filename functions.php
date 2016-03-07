@@ -110,26 +110,43 @@ function itineraryContents() {
 		$venues = json_decode($response);
 		
 		foreach($venues->response->venues as $venue): ?>
+			<div class="venue">
 				<?php 
-				$output .= '<tr>';
-				$output .= '<td>Name: '. $venue->name .'</td>';
-				if(isset($venue->categories['0']))
+					
+					if(isset($venue->categories['0']))
+					{
+						echo '<image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/>';
+					}
+					else
+						'<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
+						
+					echo'<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
+					echo $venue->name;
+					echo $venue->id;
+					echo "</b></a><br/>";
+					
+                    if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							$output .= '<td>Category: '.$venue->categories['0']->name.'</td>';
+							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
 						}
+					}
+
+                    echo "Location Information: ".$venue->location->lat." latitude , ".$venue->location->lng." longitude";
 					
-		$output .= '</tr>';
-		$output .= '</table>';
-		$output .= '<div><button type="submit">Update cart</button></div>';
-		$output .= '</form>';
-	} else {
-		$output .= '<p>You shopping cart is empty.</p>';
-	}
-	endforeach;
+				echo "<div class=\"row\">
+                <a href=\"itinerary.php?action=add&id=".$venue->id."\">Add to Itinerary</a>
+				<div class=\"cell\">&nbsp;</div>
+						    <div class=\"cell\">
+						    </div>
+						  </div>";
+						  ?>
+			
+			</div>
+			
+		<?php endforeach;
 		}
 	}
-	return $output;	
 }
 ?>
