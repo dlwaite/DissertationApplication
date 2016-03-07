@@ -73,12 +73,12 @@ function logIn () {
 function cartStatus() {
 	$cart = $_SESSION['cart'];
 	if (!$cart) {
-		return '<p><a href="./shoppingcart.php">Your Basket:</a> 0</p>';
+		return '<p><a href="./itinerary.php">Your Itinerary:</a> 0</p>';
 	} else {
 		// Parse the cart session variable
 		$items = explode(',',$cart);
 		$s = (count($items) > 1) ? 's':'';
-		return '<p><a href="./shoppingcart.php">Your Basket:</a>' .count($items). ' item' .$s.'</p>';
+		return '<p><a href="./itinerary.php">Your Itinerary:</a>' .count($items). ' venue' .$s.'</p>';
 	}
 }
 
@@ -90,7 +90,7 @@ function cartContents() {
 		foreach ($items as $item) {
 			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 		}
-		$output .= '<form action="shoppingcart.php?action=update" method="post" id="cart">';
+		$output .= '<form action="itinerary.php?action=update" method="post" id="cart">';
 		$output .= '<table>';		
 		
 		foreach ($contents as $id) {
