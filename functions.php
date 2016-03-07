@@ -44,7 +44,7 @@ function logIn () {
 
 		$stmt = mysqli_prepare($conn, $sql); 
 		
-		mysqli_stmt_bind_param($stmt, "s", $username);
+		mysqli_stmt_bind_param($stmt, 's', $username);
 		mysqli_stmt_execute($stmt); 
 		
 		mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
