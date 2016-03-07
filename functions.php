@@ -102,7 +102,7 @@ function cartContents() {
 		$endpoint = "venues/search";
 
 		// Prepare parameters
-		$params = array("VENUE_ID"=>$id);
+		$params = array("id"=>$id);
 
 		// Perform a request to a public resource
 		$response = $foursquare->GetPublic($endpoint,$params);

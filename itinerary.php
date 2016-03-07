@@ -79,7 +79,6 @@ echo cartContents();
 
 <p>|| <a href="./homepage.php">Add Further Venues</a> || <a href="./proceed.php">Save to Account Itinerary</a> ||
 
-</div>
-<div id="bottombanner"> <p align="center" class ="normal"><img src="images/ScreenHunter_01 May. 22 18.07.jpg" alt="header" width="659" height="58" align="absmiddle" /></a></div>
+
 </body>
 </html>
