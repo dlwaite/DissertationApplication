@@ -14,9 +14,9 @@ $action = $_GET['action'];
 switch ($action) {
 	case 'add':
 	if ($cart) {
-		$cart .= ','.$_GET['VENUE_ID'];
+		$cart .= ','.$_GET['id'];
 	} else {
-		$cart = $_GET['VENUE_ID'];
+		$cart = $_GET['id'];
 	}
 	break;
 		case 'delete':
@@ -25,7 +25,7 @@ switch ($action) {
 		$newcart = '';
 		
 		foreach ($items as $item) {
-			if ($_GET['VENUE_ID'] !=$item) {
+			if ($_GET['id'] !=$item) {
 				if ($newcart != '') {
 					$newcart .= ','.$item;
 				} else {
