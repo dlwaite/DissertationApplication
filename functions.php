@@ -67,7 +67,7 @@ function logIn () {
 			echo "<p>Sorry that username is not in our system.</p> ";		// create an error message
 			echo $username;
 			echo "<a href = \"login.php\">Please try again.</a>";			// with a link back to the login page
-			echo $password
+			echo $password;
 			die (mysql_error());
 		}
 	}
