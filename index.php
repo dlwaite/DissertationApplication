@@ -20,6 +20,12 @@ session_start();
 include 'database_conn.php';	  // make database connection
 include 'functions.php';	  // make database connection
 
+echo $dbhost;
+echo $db_name;
+echo $dbpassword;
+echo $dbport;
+echo $dbusername;
+
 //show login status in top right of page ?>
 <div align="right"><?php echo loginStatus()?></div> 
 

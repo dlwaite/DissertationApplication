@@ -1,10 +1,4 @@
 <?php //connect to the database
-//$conn = mysql_connect ('mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/', 'adminQTSXp5f', 'agISJEaCtxUB')
-//	or die("Could Not Connect to MySQL!");
-//	mysql_select_db("phpmyapp")
-//	or die("Could Not Open Database:".mysql_error());
-
-
 define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
 define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
 define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
@@ -32,14 +26,10 @@ mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon)
 //  Root Password: agISJEaCtxUB
 //URL: https://phpmyapp-dlwaite.rhcloud.com/phpmyadmin/
 
-//email
-//password
-//firstname
-//surname
-//address 1
-//address 2
-//town/city
-//postcode
-//phone
+//$conn = mysql_connect ('mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/', 'adminQTSXp5f', 'agISJEaCtxUB')
+//	or die("Could Not Connect to MySQL!");
+//	mysql_select_db("phpmyapp")
+//	or die("Could Not Open Database:".mysql_error());
+
 
 ?>
