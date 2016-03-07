@@ -102,7 +102,7 @@ function itineraryContents() {
 			$endpoint = "venues/search";
 			
 			// Prepare parameters
-			$params = array("id"=>$id);
+			$params = array("VENUE_ID"=>$id);
 			
 			// Perform a request to a public resource
 			$response = $foursquare->GetPublic($endpoint,$params);
