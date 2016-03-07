@@ -1,5 +1,5 @@
 <?php //connect to the database
-$conn = mysql_connect ('https://phpmyapp-dlwaite.rhcloud.com/phpmyadmin/', 'adminQTSXp5f', 'agISJEaCtxUB')
+$conn = mysql_connect ('mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/', 'adminQTSXp5f', 'agISJEaCtxUB')
 	or die("Could Not Connect to MySQL!");
 
 
