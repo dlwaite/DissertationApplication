@@ -100,19 +100,15 @@ function itineraryContents() {
 			$endpoint = "venues/VENUE_ID";
 			
 			// Prepare parameters
-			$params = array("id"=>$id);
+			$params = array("VENUE_ID"=>$id);
 			
 			// Perform a request to a public resource
 			$response = $foursquare->GetPublic($endpoint,$params);
 			
 			$venues = json_decode($response);
 			
-			print_r($venues);
-			
 			foreach($venues->response->venues as $venue):
-			
-			echo $venue->name;
-			
+					
 			$output .= '<tr>';			
 			if(isset($venue->categories['0']))
 					{
