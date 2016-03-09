@@ -95,7 +95,7 @@ function itineraryContents() {
 		echo "<tr><th>ID Used</th><th>ID</th><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
 		
 		//$output .= '<table>';
-		foreach ($contents as $id=>$qty) {
+		foreach ($contents as $id) {
 			
 			require_once("FoursquareApi.php");
 
