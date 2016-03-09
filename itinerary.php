@@ -127,10 +127,10 @@ $id = $_GET['id'];
         var y = [];
         var h = [];
 
-        t.push(['$id']);
+        t.push('Location Name 1');
         x.push(33.84659);
         y.push(-84.35686);
-        h.push('<p><strong>' & $id & '</strong><br/>Address 1</p>');
+        h.push('<p><strong>".$id."</strong><br/>Address 1</p>');
 
         t.push('Location Name 2');
         x.push(33.846253);
