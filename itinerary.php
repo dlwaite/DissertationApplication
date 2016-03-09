@@ -100,7 +100,7 @@ echo itineraryContents();
 
 $lat = $_GET['searchPlace'];
 $long = $_GET['category'];
-$id = $_GET['id'];
+$id = $_GET[$venue->id];
 
 ?>
 
