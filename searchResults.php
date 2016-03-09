@@ -47,10 +47,8 @@ foreach($venues->response->venues as $venue): ?>
 						'<image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/>';
 						
 					echo'<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
-					?>
-					<p class="field"><input name="name" id="name" value="<?php $venue->name ?>" /></p>;
-					<?php
-                    echo "</b></a><br/>";
+					echo $venue->name;
+					echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
                     {

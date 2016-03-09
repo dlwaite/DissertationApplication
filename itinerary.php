@@ -100,7 +100,6 @@ echo itineraryContents();
 
 $lat = $_GET['searchPlace'];
 $long = $_GET['category'];
-$name = $_GET['name'];
 $id = $_GET['id'];
 
 ?>
@@ -128,7 +127,7 @@ $id = $_GET['id'];
         var y = [];
         var h = [];
 
-        t.push(' & <?php $name ?> & ');
+        t.push($id);
         x.push(33.84659);
         y.push(-84.35686);
         h.push('<p><strong>Location Name 1</strong><br/>Address 1</p>');
