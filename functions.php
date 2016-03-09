@@ -90,7 +90,11 @@ function itineraryContents() {
 		foreach ($items as $item) {
 			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 		}
-		$output .= '<table>';
+		
+		echo "<table border='1'>";
+		echo "<tr><th>ID</th><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
+		
+		//$output .= '<table>';
 		foreach ($contents as $id=>$qty) {
 			
 			require_once("FoursquareApi.php");
@@ -109,36 +113,51 @@ function itineraryContents() {
 			
 			foreach($venues->response->venues as $venue):
 					
-			$output .= '<tr>';			
-			if(isset($venue->categories['0']))
-					{
-						$output .= '<td><image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/></td>';
-					}
-					else
-						$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
+			echo "<tr><td>";	
+			echo $row[$venue->id];
+			echo "</td><td>";
+			//$output .= '<td>'. $venue->id .'</td>';			
+			//if(isset($venue->categories['0']))
+			//		{
+			//			$output .= '<td><image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/></td>';
+			//		}
+			//		else
+			//			$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
+					
+					echo "<tr><td>";	
+					echo $row[$venue->name];
+					echo "</td><td>";
 						
-					$output .= '<td>'. $venue->name .'</td>';
-					$output .= '<td>'. $venue->id .'</td>';
+					//$output .= '<td>'. $venue->name .'</td>';
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							$output .= '<td>' .$venue->categories['0']->name.'</td><br/>';
+							echo "<tr><td>";	
+							echo $row[$venue->categories['0']->name];
+							echo "</td><td>";
+							//$output .= '<td>' .$venue->categories['0']->name.'</td><br/>';
 						}
 					}
-					
-					$output .= '<td>'. $venue->location->lat .'</td>';
-					$output .= '<td>'. $venue->location->lng .'</td>';
-					$output .= '</tr>';
+					echo "<tr><td>";	
+					echo $row[$venue->categories['0']->name];
+					echo "</td><td>";
+					//$output .= '<td>'. $venue->location->lat .'</td>';
+					echo "<tr><td>";	
+					echo $row[$venue->categories['0']->name];
+					echo "</td></tr>";
+					//$output .= '<td>'. $venue->location->lng .'</td>';
+					//$output .= '</tr>';
 						  
 				endforeach;
 		}
-		$output .= '</table>';
+		//$output .= '</table>';
+		echo "</table>";
 	} else {
 		$output .= '<p>Your itinerary is empty.</p>';
 	}
-	return $output;
+	//return $output;
 }
 
 ?>
