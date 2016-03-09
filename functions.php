@@ -111,10 +111,14 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
+			print $venues;
+			
 			foreach($venues->response->venues as $venue):
-					
 			echo "<tr><td>";	
 			echo $row[$id];
+			echo "</td><td>";
+			
+			echo "<tr><td>";
 			echo $row[$venue->id];
 			echo "</td><td>";
 			//$output .= '<td>'. $venue->id .'</td>';			
