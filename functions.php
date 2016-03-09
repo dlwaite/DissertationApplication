@@ -92,7 +92,7 @@ function itineraryContents() {
 		}
 		
 		echo "<table border='1'>";
-		echo "<tr><th>ID</th><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
+		echo "<tr><th>ID Used</th><th>ID</th><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
 		
 		//$output .= '<table>';
 		foreach ($contents as $id=>$qty) {
@@ -114,6 +114,7 @@ function itineraryContents() {
 			foreach($venues->response->venues as $venue):
 					
 			echo "<tr><td>";	
+			echo $row[$id];
 			echo $row[$venue->id];
 			echo "</td><td>";
 			//$output .= '<td>'. $venue->id .'</td>';			
