@@ -85,8 +85,8 @@ $_SESSION['cart'] = $cart;
 <h1>Your Itinerary</h1>
 
 <?php
-//echo itineraryStatus();
-//print $cart
+echo itineraryStatus();
+print $cart
 ?>
 
 </div>
@@ -96,11 +96,12 @@ $_SESSION['cart'] = $cart;
 <h1>Please check your Itinerary...</h1>
 
 <?php
-//echo itineraryContents();
+echo itineraryContents();
 
 $lat = $_GET['searchPlace'];
 $long = $_GET['category'];
-$name = $_GET['id'];
+$name = $_GET['name'];
+$id = $_GET['id'];
 
 ?>
 
@@ -127,7 +128,7 @@ $name = $_GET['id'];
         var y = [];
         var h = [];
 
-        t.push('$name');
+        t.push(' & <?php $name ?> & ');
         x.push(33.84659);
         y.push(-84.35686);
         h.push('<p><strong>Location Name 1</strong><br/>Address 1</p>');
