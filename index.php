@@ -17,7 +17,7 @@ session_start();
 <h1>Plan your Night Out</h1>
 
 <?php
-include 'database_conn.php';	  // make database connection
+include('./inc/connection.inc.php');	  // make database connection
 include 'functions.php';	  // make database connection
 
 //show login status in top right of page ?>

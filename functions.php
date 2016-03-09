@@ -25,7 +25,8 @@ function logIn () {
 	$username = isset($_REQUEST['username']) ? $_REQUEST['username'] : null;
 	$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : null;
 
-	include 'database_conn.php';
+	include('./inc/connection.inc.php');
+	connect();
 
 	if (empty($username)) {													// if the username field was left empty then echo out an error and 
 		 echo "<p>You must enter an E-Mail Address.</p> ";							// inlcude a button that allows the user to return to the previous page

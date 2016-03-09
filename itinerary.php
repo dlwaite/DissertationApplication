@@ -1,6 +1,6 @@
 <?php
 // Includes
-include('database_conn.php');
+include('./inc/connection.inc.php');;
 include('functions.php');
 
 // Start the session

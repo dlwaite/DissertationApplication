@@ -18,7 +18,7 @@ session_start();
         
 		<?php
 		
-		include 'database_conn.php';										// include database connection
+		include('./inc/connection.inc.php');										// include database connection
 		include 'functions.php';											// include functions
 		
         if (isset($_SESSION['logged-in']) && ($_SESSION['logged-in'])) {		// if someone is logged in and the logged in session is active

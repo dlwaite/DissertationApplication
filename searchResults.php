@@ -9,7 +9,7 @@
 <body>
 <form id="SearchResults" action="" method="post">
 <?php
-include 'database_conn.php';	  // make database connection
+include('./inc/connection.inc.php');	  // make database connection
 include 'functions.php';	  // make database connection
 
 $searchPlace = $_GET['searchPlace'];
