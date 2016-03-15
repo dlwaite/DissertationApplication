@@ -102,10 +102,10 @@ function itineraryContents() {
 
 			$foursquare = new FoursquareApi("OZ2IWKQWSXNOA5IUR2ZOBNL3O340CIFZ0DYBQFOG54CUAL0Q", "VRJAMLKNAWZKT5SVJ0TCR0SRQ4DDKCOGSAPE4BUKICXUGKW1");
 			
-			$endpoint = "venues/VENUE_ID";
+			$endpoint = "venues/$id";
 			
 			// Prepare parameters
-			$params = array("VENUE_ID"=>$id);
+			$params = array();// array("VENUE_ID"=>$id);
 			
 			// Perform a request to a public resource
 			$response = $foursquare->GetPublic($endpoint,$params);
