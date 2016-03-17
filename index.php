@@ -14,8 +14,7 @@ session_start();
 <body>
 <form id="Homepage" action="searchResults.php" method="get">
 
-<h1>Plan your Night Out</h1>
-
+<div align="center"><h1>Plan your Night Out</h1></div>
 <?php
 include('./inc/connection.inc.php');	  // make database connection
 include 'functions.php';	  // make database connection
@@ -23,27 +22,30 @@ include 'functions.php';	  // make database connection
 //show login status in top right of page ?>
 <div align="right"><?php echo loginStatus()?></div> 
 
-    
-<p class="field"><label for="searchPlace">Please Enter the Search Location:</label> 
-      <input type="text" name="searchPlace" id="searchPlace" maxlength="254" />
-</p>
+<div align="center">
+<label for="searchPlace">Please Enter the Search Location</label>
+ <?php "            " ?>        
+ <label for="category">Select Activity</label> 
+<?php "             " ?>
+<label for="date">Select Date</label>
+</div>
 
-<div>
- Select Activity:
+<div align="center"> 
+<p class="field"> 
+      <input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
+ <?php "       " ?>
  <select name="category">
    <option value="">Please Select</option>
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
   </select>
-</div>
-
-<p class="field">
-            <label for="date">Select Date</label> 
-            <input type="date" name="date" id="date" maxlength="60" />
-        </p>
+  <?php "       " ?> 
+  <input type="date" name="date" id="date" maxlength="60" size="30" />
+  </p>
+  </div>
 
 
-<p class="action"><input type="submit" name="submit" value="Search Places" /></p>
+<div align="center"><p class="action"><input type="submit" name="submit" value="Search Places" size="50" /></p></div>
 
 </body>
 </html>
