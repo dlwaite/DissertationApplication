@@ -132,7 +132,7 @@ $id = $_GET[$venue->id];
         t.push('Location Name 1');
         x.push(33.84659);
         y.push(-84.35686);
-        h.push('<p><strong><?php $id ?></strong><br/>Address 1</p>');
+        h.push('<p><strong>Location Name 1</strong><br/>Address 1</p>');
 
         t.push('Location Name 2');
         x.push(33.846253);
