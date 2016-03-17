@@ -40,31 +40,19 @@ include 'functions.php';	  // make database connection
 <label for="date">Select Date</label>
 </div>
 
-<div align="center"> 
+<div align="left">
 <p class="field"> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <select name="category" >
    <option value="">Please Select</option>
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
 </select>
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="date" name="date" id="date" maxlength="60" size="20" />
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+
 </p>
 </div>
 &nbsp;
