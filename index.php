@@ -36,13 +36,13 @@ include 'functions.php';	  // make database connection
 <label for="searchPlace">Please Enter the Search Location</label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
  <label for="category">Select Activity</label> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label for="date">Select Date</label>
 </div>
 
 <div align="center"> 
 <p class="field"> 
-<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="40" />
+<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
 &nbsp;
 &nbsp;
 &nbsp;
@@ -58,7 +58,7 @@ include 'functions.php';	  // make database connection
 &nbsp;
 &nbsp;
 &nbsp;
-<input type="date" name="date" id="date" maxlength="60" size="30" />
+<input type="date" name="date" id="date" maxlength="60" size="20" />
 &nbsp;
 &nbsp;
 &nbsp;
