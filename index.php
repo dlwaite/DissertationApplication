@@ -56,6 +56,6 @@ include 'functions.php';	  // make database connection
 </p>
 </div>
 &nbsp;
-<div align="center"><p class="action"><input type="submit" name="submit" value="Search Places" size="50" /></p></div>
+<div align="center"><p class="action"><input type="submit" name="submit" value="Search Places" style="width:120px; height:50px" /></p></div>
 </body>
 </html>

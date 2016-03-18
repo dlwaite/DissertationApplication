@@ -161,7 +161,7 @@ $id = $_GET[$venue->id];
 
 
 
-<p>|| <a href="./homepage.php">Add Further Venues</a> || <a href="./proceed.php">Save to Account Itinerary</a> ||
+<p>|| <a href="./index.php">Add Further Venues</a> ||
 
 
 </body>
