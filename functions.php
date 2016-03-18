@@ -105,14 +105,15 @@ function itineraryContents() {
 			$endpoint = "venues/$id";
 			
 			// Prepare parameters
-			$params = array();// array("VENUE_ID"=>$id);
+			$params = array();
 			
 			// Perform a request to a public resource
 			$response = $foursquare->GetPublic($endpoint,$params);
 			
 			$venues = json_decode($response);
 			
-			echo $response;
+			echo $endpoint;
+			echo $venues;
 			
 			foreach($venues->response->venues as $venue):
 			echo "<tr><td>";	
