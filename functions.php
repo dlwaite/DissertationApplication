@@ -112,10 +112,14 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
+			echo "this is the endpoint";
 			echo $endpoint;
+			echo "this is the response";
+			echo $response;
+			echo "this is the venue";			
 			echo $venues;
 			
-			foreach($venues->response->venues as $venue):
+			foreach($venues->response->venues as $venue){
 			echo "<tr><td>";	
 			echo $row[$id];
 			echo "</td><td>";
@@ -157,7 +161,7 @@ function itineraryContents() {
 					//$output .= '<td>'. $venue->location->lng .'</td>';
 					//$output .= '</tr>';
 						  
-				endforeach;
+			}
 		}
 		//$output .= '</table>';
 		echo "</table>";
