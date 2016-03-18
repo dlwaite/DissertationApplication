@@ -117,7 +117,7 @@ function itineraryContents() {
 			echo "this is the response";
 			echo $response;
 			echo "this is the venue";			
-			echo $venues;
+			print_r ($venues);
 			
 			foreach($venues->response->venues as $venue){
 			echo "<tr><td>";	
