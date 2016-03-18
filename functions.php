@@ -87,16 +87,16 @@ function itineraryContents() {
 	$cart = $_SESSION['cart'];
 	if ($cart) {
 		$items = explode(',',$cart);
-		$contents = array();
-		foreach ($items as $item) {
-			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-		}
+		//$contents = array();
+		//foreach ($items as $item) {
+		//	$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+		//}
 		
 		echo "<table border='1'>";
 		echo "<tr><th>ID Used</th><th>ID</th><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
 		
 		//$output .= '<table>';
-		foreach ($contents as $id) {
+		foreach ($items as $id) {
 			
 			require_once("FoursquareApi.php");
 
