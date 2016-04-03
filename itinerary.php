@@ -164,5 +164,9 @@ $id = $_GET[$venue->id];
 <p>|| <a href="./index.php">Add Further Venues</a> ||
 
 
+<?php 
+echo $_SESSION['lat'];
+?>
+
 </body>
 </html>

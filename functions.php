@@ -121,6 +121,18 @@ function itineraryContents() {
 					echo "</td><td>";
 					}
 				}
+			$cart = $_SESSION['cart'];
+			$action = $_GET['action'];
+			if ($lat) {
+			$lat .= ','.$venues->response->venue->location->lat;
+			} else {
+				$lat = $venues->response->venue->location->lat;
+			}
+			if ($lng) {
+			$lng .= ','.$venues->response->venue->location->lng;
+			} else {
+				$lng = $venues->response->venue->location->lng;
+			}
 			echo "".$venues->response->venue->location->lat."";
 			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
