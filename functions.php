@@ -104,7 +104,7 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 					
-			print_r ($venues);
+			//print_r ($venues);
 			
 			foreach($venues->response->venue as $venue){
 			
