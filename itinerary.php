@@ -165,7 +165,7 @@ $id = $_GET[$venue->id];
 
 
 <?php 
-echo $_SESSION['lat'];
+print $lat;
 ?>
 
 </body>
