@@ -103,20 +103,18 @@ function itineraryContents() {
 			$response = $foursquare->GetPublic($endpoint,$params);
 			
 			$venues = json_decode($response);
-					
-			//print_r ($venues);
 			
 			foreach($venues->response->venue as $venue){
 			
-			echo $row[$venue->id];
+			echo $venue->id;
 			
-					echo $row[$venue->name];
+					echo $venue->name;
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							echo $row[$venue->categories['0']->name];
+							echo $venue->categories['0']->name;
 						}
 					}	
 					echo "".$venue->location->lat."";
@@ -125,7 +123,7 @@ function itineraryContents() {
 			}
 		}
 	} else {
-		$output .= '<p>Your itinerary is empty.</p>';
+		echo '<p>Your itinerary is empty.</p>';
 	}
 }
 
