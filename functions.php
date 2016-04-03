@@ -121,8 +121,8 @@ function itineraryContents() {
 					echo "</td><td>";
 					}
 				}
-			$cart = $_SESSION['cart'];
-			$action = $_GET['action'];
+			$lat = $_SESSION['lat'];
+			$lng = $_SESSION['lng'];
 			if ($lat) {
 			$lat .= ','.$venues->response->venue->location->lat;
 			} else {
@@ -139,6 +139,8 @@ function itineraryContents() {
 			echo "</td></tr>";			  
 		}
 		echo "</table>";
+		$_SESSION['lng'] = $lng;
+		$_SESSION['lat'] = $lat;
 	} else {
 		echo '<p>Your itinerary is empty.</p>';
 	}
