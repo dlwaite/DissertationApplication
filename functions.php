@@ -52,7 +52,7 @@ function logIn () {
 		if (mysqli_stmt_fetch($stmt)) {										// if there was a result
 	
 			if ($password == $passwordfromDB) {								// if the passwords match
-				$_SESSION['username'] = $username;						    // store the value of the user logged in in the session
+				$_SESSION['username'] = $username;						// store the value of the user logged in in the session
 				$_SESSION['logged-in'] = true;								// make the session logged in as true
 				echo "<p>You have successfully signed in.</p>";				// tell the user they have logged in and include a link to the admin page
 				echo "<a href = \"admin.php?username=$username\">Continue to Admin Page</a>";
@@ -104,25 +104,26 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
-			foreach($venues->response->venues as $venue) { 
-					
-					echo $venue->id.'<b>';
+			foreach($venues->response->venue as $venue){
+			
+			echo <br/>;
+			echo $venue->id;
+			
 					echo $venue->name;
-					echo "</b></a><br/>";
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							echo $venue->categories['0']->name.'<br/>';
+							echo $venue->categories['0']->name;
 						}
-					}
-
-                    echo "Location Information: ".$venue->location->lat." latitude , ".$venue->location->lng." longitude";
+					}	
+					echo "".$venue->location->lat."";
+					echo "".$venue->location->lng."";
+						  
 			}
-	
 		}
-	}else {
+	} else {
 		echo '<p>Your itinerary is empty.</p>';
 	}
 }
