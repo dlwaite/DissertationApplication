@@ -104,9 +104,7 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
-			foreach($venues->response->venues as $venue) { ?>
-			<div class="venue">
-				<?php 
+			foreach($venues->response->venues as $venue) { 
 					
 					echo $venue->id.'<b>';
 					echo $venue->name;
@@ -121,15 +119,10 @@ function itineraryContents() {
 					}
 
                     echo "Location Information: ".$venue->location->lat." latitude , ".$venue->location->lng." longitude";
-					
-					?>
-			
-			</div>
-			
-<?php }
-
-}
-	} else {
+			}
+	
+		}
+	}else {
 		echo '<p>Your itinerary is empty.</p>';
 	}
 }
