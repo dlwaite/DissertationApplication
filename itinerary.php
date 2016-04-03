@@ -8,6 +8,8 @@ session_start();
 
 //Process Action
 $cart = $_SESSION['cart'];
+$lat = $_SESSION['lat'];
+$lng = $_SESSION['lng'];
 $action = $_GET['action'];
 
 switch ($action) {
@@ -66,6 +68,8 @@ switch ($action) {
 	break;
 }
 $_SESSION['cart'] = $cart;
+$_SESSION['lng'] = $lng;
+$_SESSION['lat'] = $lat;
 
 ?>
 
@@ -97,10 +101,6 @@ print $cart
 
 <?php
 echo itineraryContents();
-
-$lat = $_GET['searchPlace'];
-$long = $_GET['category'];
-$id = $_GET[$venue->id];
 
 ?>
 
