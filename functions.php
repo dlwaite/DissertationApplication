@@ -117,12 +117,10 @@ function itineraryContents() {
                 {
 					if(property_exists($venues->response->venue->categories['0'],"name"))
 					{ 
-					echo "</td><td>";
 					echo $venues->response->venue->categories['0']->name.'<br>';
 					echo "</td><td>";
 					}
 				}
-			echo "</td><td>";
 			echo "".$venues->response->venue->location->lat."";
 			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
