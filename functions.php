@@ -118,7 +118,7 @@ function itineraryContents() {
 						}
 					}	
 					echo "".$venue->location->lat."";
-					echo "".$venue->location->lng.'<br/>';
+					echo "".$venue->location->lng."";
 						  
 			}
 		}
