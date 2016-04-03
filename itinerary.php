@@ -132,16 +132,25 @@ echo itineraryContents();
         var x = [];
         var y = [];
         var h = [];
+		
+		<?php
+		$lat = $_SESSION['lat'];
+		if ($lat) {
+		$latitude = explode(',',$lat);
+		
+		foreach ($latitude as $id) {
+			
+		?>
 
         t.push('Location Name 1');
-        x.push(33.84659);
+        x.push(<?php $lat ?>);
         y.push(-84.35686);
         h.push('<p><strong>Location Name 1</strong><br/>Address 1</p>');
-
-        t.push('Location Name 2');
-        x.push(33.846253);
-        y.push(-84.362125);
-        h.push('<p><strong>Location Name 2</strong><br/>Address 2</p>');
+		
+		<?php
+		}
+		}
+		?>
 
         var i = 0;
         for ( item in t ) {
