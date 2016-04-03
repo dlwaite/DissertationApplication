@@ -109,7 +109,6 @@ function itineraryContents() {
 			$venues = json_decode($response);
 			
 			echo "<tr><td>";
-			//echo $venues->response->venue->id." ";
 			echo $venues->response->venue->name.'<br>';
 			echo "</td><td>";
 			
@@ -121,26 +120,13 @@ function itineraryContents() {
 					echo "</td><td>";
 					}
 				}
-			$lat = $_SESSION['lat'];
-			$lng = $_SESSION['lng'];
-			if ($lat) {
-			$lat .= ','.$venues->response->venue->location->lat;
-			} else {
-				$lat = $venues->response->venue->location->lat;
-			}
-			if ($lng) {
-			$lng .= ','.$venues->response->venue->location->lng;
-			} else {
-				$lng = $venues->response->venue->location->lng;
-			}
+		
 			echo "".$venues->response->venue->location->lat."";
 			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
 			echo "</td></tr>";			  
 		}
 		echo "</table>";
-		$_SESSION['lng'] = $lng;
-		$_SESSION['lat'] = $lat;
 	} else {
 		echo '<p>Your itinerary is empty.</p>';
 	}

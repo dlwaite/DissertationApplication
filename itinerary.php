@@ -16,8 +16,12 @@ switch ($action) {
 	case 'add':
 	if ($cart) {
 		$cart .= ','.$_GET['id'];
+		$lat .= ','.$_GET['lat'];
+		$lng .= ','.$_GET['lng'];
 	} else {
 		$cart = $_GET['id'];
+		$lat = $_GET['lat'];
+		$lng = $_GET['lng'];
 	}
 	break;
 		case 'delete':
