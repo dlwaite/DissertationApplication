@@ -106,7 +106,6 @@ function itineraryContents() {
 			
 			foreach($venues->response->venue as $venue){
 			
-			echo <br/>;
 			echo $venue->id;
 			
 					echo $venue->name;
