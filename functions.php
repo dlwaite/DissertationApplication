@@ -106,19 +106,19 @@ function itineraryContents() {
 			
 			foreach($venues->response->venue as $venue){
 			
-			echo $venue->id;
+			echo $venue->id.'<br>';
 			
-					echo $venue->name;
+					echo $venue->name.'<br>';
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							echo $venue->categories['0']->name;
+							echo $venue->categories['0']->name.'<br>';
 						}
 					}	
-					echo "".$venue->location->lat."";
-					echo "".$venue->location->lng."";
+					echo "".$venue->location->lat.'<br>';
+					echo "".$venue->location->lng.'<br>';
 						  
 			}
 		}
