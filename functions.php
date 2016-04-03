@@ -87,7 +87,7 @@ function itineraryContents() {
 	$cart = $_SESSION['cart'];
 	if ($cart) {
 		$items = explode(',',$cart);
-		
+	
 		foreach ($items as $id) {
 			
 			require_once("FoursquareApi.php");
@@ -104,24 +104,19 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
-			//foreach($venues->response->venue as $venue){
-			
 			echo $venues->response->venue->id." ";
 			echo $venues->response->venue->name.'<br>';
 			
-			//		echo $venue->name;
-			//		
-            //        if(isset($venue->categories['0']))
-            //        {
-			//			if(property_exists($venue->categories['0'],"name"))
-			//			{
-			//				echo $venue->categories['0']->name.'<br>';
-			//			}
-			//		}	
-			//		echo "".$venue->location->lat."";
-			//		echo "".$venue->location->lng."";
+			if(isset($venues->response->venue->categories['0']))
+                {
+					if(property_exists($venues->response->venue->categories['0'],"name"))
+					{ 
+					echo $venues->response->venue->categories['0']->name.'<br>';
+					}
+				}
+			echo "".$venues->response->venue->location->lat."";
+			echo "".$venues->response->venue->location->lng."";
 						  
-			//}
 		}
 	} else {
 		echo '<p>Your itinerary is empty.</p>';
