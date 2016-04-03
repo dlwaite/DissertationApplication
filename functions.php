@@ -106,7 +106,8 @@ function itineraryContents() {
 			
 			//foreach($venues->response->venue as $venue){
 			
-			echo $venues->response->venue->id;
+			echo $venues->response->venue->id." ";
+			echo $venues->response->venue->name.'<br>';
 			
 			//		echo $venue->name;
 			//		
