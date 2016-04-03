@@ -88,6 +88,10 @@ function itineraryContents() {
 	if ($cart) {
 		$items = explode(',',$cart);
 	
+		// create a table
+		echo "<table border='1'>";
+		// with headings
+		echo "<tr><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
 		foreach ($items as $id) {
 			
 			require_once("FoursquareApi.php");
@@ -104,20 +108,27 @@ function itineraryContents() {
 			
 			$venues = json_decode($response);
 			
-			echo $venues->response->venue->id." ";
+			echo "<tr><td>";
+			//echo $venues->response->venue->id." ";
 			echo $venues->response->venue->name.'<br>';
+			echo "</td><td>";
 			
 			if(isset($venues->response->venue->categories['0']))
                 {
 					if(property_exists($venues->response->venue->categories['0'],"name"))
 					{ 
+					echo "</td><td>";
 					echo $venues->response->venue->categories['0']->name.'<br>';
+					echo "</td><td>";
 					}
 				}
+			echo "</td><td>";
 			echo "".$venues->response->venue->location->lat."";
+			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
-						  
+			echo "</td></tr>";			  
 		}
+		echo "</table>";
 	} else {
 		echo '<p>Your itinerary is empty.</p>';
 	}
