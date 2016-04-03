@@ -35,7 +35,7 @@ $response = $foursquare->GetPublic($endpoint,$params);
 
 $venues = json_decode($response);
 
-foreach($venues->response->venues as $venue): ?>
+foreach($venues->response->venues as $venue) { ?>
 			<div class="venue">
 				<?php 
 					
@@ -70,7 +70,7 @@ foreach($venues->response->venues as $venue): ?>
 			
 			</div>
 			
-<?php endforeach;
+<?php }
 
 
 //require_once("Client.php");

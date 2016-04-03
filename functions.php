@@ -87,15 +87,7 @@ function itineraryContents() {
 	$cart = $_SESSION['cart'];
 	if ($cart) {
 		$items = explode(',',$cart);
-		//$contents = array();
-		//foreach ($items as $item) {
-		//	$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-		//}
 		
-		echo "<table border='1'>";
-		echo "<tr><th>ID Used</th><th>ID</th><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
-		
-		//$output .= '<table>';
 		foreach ($items as $id) {
 			
 			require_once("FoursquareApi.php");
@@ -111,64 +103,30 @@ function itineraryContents() {
 			$response = $foursquare->GetPublic($endpoint,$params);
 			
 			$venues = json_decode($response);
-			
-			//echo "this is the endpoint";
-			//echo $endpoint;
-			//echo "this is the response";
-			//echo $response;
-			//echo "this is the venue";			
+					
 			print_r ($venues);
 			
 			foreach($venues->response->venue as $venue){
-			echo "<tr><td>";	
-			echo $row[$id];
-			echo "</td><td>";
 			
-			echo "<tr><td>";
 			echo $row[$venue->id];
-			echo "</td><td>";
-			//$output .= '<td>'. $venue->id .'</td>';			
-			//if(isset($venue->categories['0']))
-			//		{
-			//			$output .= '<td><image class="icon" src="'.$venue->categories['0']->icon->prefix.'88.png"/></td>';
-			//		}
-			//		else
-			//			$output .= '<td><image class="icon" src="https://foursquare.com/img/categories/building/default_88.png"/></td>';
-					
-					echo "<tr><td>";	
+			
 					echo $row[$venue->name];
-					echo "</td><td>";
-						
-					//$output .= '<td>'. $venue->name .'</td>';
 					
                     if(isset($venue->categories['0']))
                     {
 						if(property_exists($venue->categories['0'],"name"))
 						{
-							echo "<tr><td>";	
 							echo $row[$venue->categories['0']->name];
-							echo "</td><td>";
-							//$output .= '<td>' .$venue->categories['0']->name.'</td><br/>';
 						}
-					}
-					echo "<tr><td>";	
-					echo $row[$venue->categories['0']->name];
-					echo "</td><td>";
-					//$output .= '<td>'. $venue->location->lat .'</td>';
-					echo "<tr><td>";	
-					echo $row[$venue->categories['0']->name];
-					echo "</td></tr>";
-					//$output .= '<td>'. $venue->location->lng .'</td>';
-					//$output .= '</tr>';
+					}	
+					echo "".$venue->location->lat."";
+					echo "".$venue->location->lng."";
 						  
 			}
 		}
-		//$output .= '</table>';
-		echo "</table>";
 	} else {
 		$output .= '<p>Your itinerary is empty.</p>';
 	}
-	//return $output;
 }
 
 ?>
