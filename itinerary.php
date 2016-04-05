@@ -125,7 +125,7 @@ echo itineraryStatus();
 
 
 <div id="contents">
-
+<div></div>
 <h2>Please check your Itinerary...</h2>
 
 <?php
