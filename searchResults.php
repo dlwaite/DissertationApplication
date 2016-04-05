@@ -47,6 +47,7 @@ $date = $_GET['date'];
 </div>
 
 <div id="searchResults">
+<p></p>
 <h2>Search Results...</h2>
 <?php
 
