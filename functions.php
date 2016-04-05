@@ -97,7 +97,7 @@ function itineraryContents() {
 		// create a table
 		echo "<table border='1'>";
 		// with headings
-		echo "<tr><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th></tr>";
+		echo "<tr><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th><th>Remove</th></tr>";
 		foreach ($items as $id) {
 			
 			require_once("FoursquareApi.php");
@@ -131,8 +131,7 @@ function itineraryContents() {
 			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
 			echo "</td><td>";
-			echo "<div class=\"row\"><a href=\"itinerary.php?action=delete&id=".$venues->response->venue->id."\">Remove</a>
-				<div class=\"cell\">&nbsp;</div><div class=\"cell\"></div></div>";
+			echo "<a href=\"itinerary.php?action=delete&id=".$venues->response->venue->id."\">Remove</a>";
 		    echo "</td></tr>";			  
 		}
 		echo "</table>";
