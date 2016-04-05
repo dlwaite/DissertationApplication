@@ -103,28 +103,25 @@ echo itineraryStatus();
 </div>
 </div>
 
+<div id="searchBar">
 <div align="left">
 <label for="searchPlace">Please Enter the Search Location</label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
- <label for="category">Select Activity</label> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<label for="date">Select Date</label>
-</div>
-
-<div align="left">
-<p class="field">
-<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class="field"><input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" /></p>
+&nbsp;&nbsp;
+<label for="category">Select Activity</label> 
 <select name="category" >
    <option value="">Please Select</option>
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
 </select>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+<label for="date">Select Date</label>
 <input type="date" name="date" id="date" maxlength="60" size="20" />
-
-</p>
+&nbsp;&nbsp;
+<div align="center"><p class="action"><input type="submit" name="submit" value="Search Places" style="width:120px" /></p></div>
 </div>
+</div>
+
 
 <div id="contents">
 
