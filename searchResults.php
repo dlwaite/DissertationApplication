@@ -46,6 +46,8 @@ $date = $_GET['date'];
 </div>
 </div>
 
+<div id="searchResults">
+<h2>Search Results...</h2>
 <?php
 
 If (strlen($searchPlace)>0) {
@@ -114,6 +116,7 @@ echo "Please enter a location before searching for venues";
 }
 
 ?>
+</div>
 <br>
 <br>
 <b><a href='index.php'>Back to Search Criteria</a></b>
