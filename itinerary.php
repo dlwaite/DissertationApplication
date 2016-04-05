@@ -88,7 +88,7 @@ $_SESSION['lat'] = $lat;
 <body>
 <form id="Itineray" action="searchResults.php" method="get">
 
-<h1>Your Itinerary</h1>
+<div align="center"><h1>Your Itinerary</h1></div>
 
 <?php
 //show login status in top right of page ?>
@@ -103,9 +103,32 @@ echo itineraryStatus();
 </div>
 </div>
 
+<div align="left">
+<label for="searchPlace">Please Enter the Search Location</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+ <label for="category">Select Activity</label> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="date">Select Date</label>
+</div>
+
+<div align="left">
+<p class="field">
+<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="category" >
+   <option value="">Please Select</option>
+   <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
+   <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="date" name="date" id="date" maxlength="60" size="20" />
+
+</p>
+</div>
+
 <div id="contents">
 
-<h1>Please check your Itinerary...</h1>
+<h2>Please check your Itinerary...</h2>
 
 <?php
 echo itineraryContents();
