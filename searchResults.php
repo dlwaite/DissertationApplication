@@ -12,10 +12,6 @@
 <h1>Search Results</h1>
 
 <?php
-//show login status in top right of page ?>
-<div align="right"><?php echo loginStatus()?></div>
-
-<?php
 include('./inc/connection.inc.php');	  // make database connection
 include 'functions.php';	  // make database connection
 
@@ -23,6 +19,10 @@ $searchPlace = $_GET['searchPlace'];
 $activity = $_GET['category'];
 $date = $_GET['date'];
 
+//show login status in top right of page ?>
+<div align="right"><?php echo loginStatus()?></div>
+
+<?php
 
 If (strlen($searchPlace)>0) {
 	
