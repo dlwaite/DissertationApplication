@@ -251,9 +251,5 @@ echo itineraryContents();
 </script> 
 <div id="map_canvas" style="width:400px;height:400px;">Google Map</div> 
 
-
-
-<p>|| <a href="./index.php">Add Further Venues</a> ||
-
 </body>
 </html>
