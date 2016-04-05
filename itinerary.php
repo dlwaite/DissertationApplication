@@ -86,27 +86,21 @@ $_SESSION['lat'] = $lat;
 </head>
 
 <body>
-<form id="Itineray" action="" method="post">
-
-<div id="shoppingcart">
+<form id="Itineray" action="searchResults.php" method="get">
 
 <h1>Your Itinerary</h1>
 
 <?php
 //show login status in top right of page ?>
 <div align="right"><?php echo loginStatus()?></div>
-<p>&nbsp;</p>
+
+<div id="shoppingcart">
 
 <div align="right">
 <?php
 echo itineraryStatus();
 ?>
 </div>
-<p>&nbsp;</p>
-
-
-?>
-
 </div>
 
 <div id="contents">

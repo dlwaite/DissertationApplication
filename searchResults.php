@@ -12,6 +12,10 @@
 <h1>Search Results</h1>
 
 <?php
+//show login status in top right of page ?>
+<div align="right"><?php echo loginStatus()?></div>
+
+<?php
 include('./inc/connection.inc.php');	  // make database connection
 include 'functions.php';	  // make database connection
 
