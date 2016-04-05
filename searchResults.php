@@ -22,6 +22,10 @@ $date = $_GET['date'];
 //show login status in top right of page ?>
 <div align="right"><?php echo loginStatus()?></div>
 
+<div id="shoppingcart">
+<div align="right"><?php echo itineraryStatus()?></div>
+</div>
+
 <?php
 
 If (strlen($searchPlace)>0) {
