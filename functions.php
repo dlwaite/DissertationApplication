@@ -130,7 +130,10 @@ function itineraryContents() {
 			echo "".$venues->response->venue->location->lat."";
 			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
-			echo "</td></tr>";			  
+			echo "</td><td>";
+			echo "<div class=\"row\"><a href=\"itinerary.php?action=delete&id=".$venues->response->venue->id."\">Remove</a>
+				<div class=\"cell\">&nbsp;</div><div class=\"cell\"></div></div>";
+		    echo "</td></tr>";			  
 		}
 		echo "</table>";
 	} else {
