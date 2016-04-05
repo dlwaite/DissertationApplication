@@ -105,6 +105,7 @@ echo itineraryStatus();
 
 <div id="searchBar">
 <div align="left">
+<p><h2>Search for Further Venues</h2></p>
 <label for="searchPlace">Please Enter the Search Location</label>
 <input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
 &nbsp;&nbsp;
@@ -116,9 +117,9 @@ echo itineraryStatus();
 </select>
 &nbsp;&nbsp;
 <label for="date">Select Date</label>
-<input type="date" name="date" id="date" maxlength="60" size="20" />
+<input type="date" name="date" id="date" maxlength="60" size="15" />
 &nbsp;&nbsp;
-<div align="center"><input type="submit" name="submit" class="action" value="Search Places" style="width:120px" /></div>
+<input type="submit" name="submit" class="action" value="Search Places" />
 </div>
 </div>
 
