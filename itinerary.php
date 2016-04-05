@@ -12,64 +12,59 @@ $lat = $_SESSION['lat'];
 $lng = $_SESSION['lng'];
 $action = $_GET['action'];
 
+//use a switch tool to determine which case is used
 switch ($action) {
+	//if the add case is used then check to see if the cart exists
 	case 'add':
+	//if it does exist then add a comma and add the ID of the venue that was added
 	if ($cart) {
 		$cart .= ','.$_GET['id'];
 		$lat .= ','.$_GET['lat'];
 		$lng .= ','.$_GET['lng'];
+	//else start the cart with the venue of the ID that was added
 	} else {
 		$cart = $_GET['id'];
 		$lat = $_GET['lat'];
 		$lng = $_GET['lng'];
 	}
 	break;
-		case 'delete':
+	//if the delete case is used then check to see if the cart exists
+	case'delete':
+	//if the cart does exist then create a variable and put all the venues in the cart
+	//into the variable.. before doing this remove all of the commas from the cart
+	//create a blank variable called newcart
 	if ($cart) {
 		$items = explode(',',$cart);
 		$newcart = '';
 		
+		//loop through each venue in the items variable as its own variable
 		foreach ($items as $item) {
+			//if the id of the venue to delete does not equal that venue id
 			if ($_GET['id'] !=$item) {
+				//check to see if the newcart is empty
 				if ($newcart != '') {
+					//if it is not empty then add a comma and then the id of the venue
 					$newcart .= ','.$item;
 				} else {
+					//else just add the id of the venue to the newcart variable
 					$newcart = $item;
 				}
 			}
 		}
+		//make the cart variable equal the newcart variable. Doing this will now remove
+		//the id to be deleted since it will not have been added to the newcart variable
+		//in the checking of ID that was done just above.
 		$cart = $newcart;
 	}
 	break;
-	case 'update':
+	//if the removeAll case is used then check to see if the cart exists
+	case'removeAll':
 	if ($cart) {
-		$newcart = '';
-		foreach ($_POST as $key=>$value) {
-			if (stristr($key,'qty')) {
-				$id = str_replace('qty','',$key);
-				$items = ($newcart != '') ? explode(',',$newcart) : explode(',',$cart);
-				$newcart = '';
-				foreach ($items as $item) {
-					if ($id != $item) {
-						if ($newcart != '') {
-							$newcart .= ','.$item;
-						} else {
-							$newcart = $item;
-						}
-					}
-				}
-				for ($i=1;$i<=$value;$i++) {
-					if ($newcart != '') {
-						$newcart .= ','.$id;
-					} else {
-						$newcart = $id;
-					}
-				}
-			}
-		}
+		//if the cart does exist then create a new empty cart called newcart and set the
+		//carts value to equal that empty cart.
+		$newcart = "";
+		$cart = $newcart;
 	}
-	$cart = $newcart;
-	break;
 }
 $_SESSION['cart'] = $cart;
 $_SESSION['lng'] = $lng;
