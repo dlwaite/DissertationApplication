@@ -40,18 +40,24 @@ function logIn () {
 		 die (mysql_error());  
 	}
 	else {																	// else if the fields are not left empty
-		$sql = "SELECT password, firstName FROM tbl_users WHERE username = ?";		// select the password and salt from the users table where the username matches the username entered
+		$sql = "SELECT password, salt FROM tbl_users WHERE username = ?";		// select the password and salt from the users table where the username matches the username entered
 
 		$stmt = mysqli_prepare($conn, $sql); 
 		
 		mysqli_stmt_bind_param($stmt, 's', $username);
 		mysqli_stmt_execute($stmt); 
 		
-		mysqli_stmt_bind_result($stmt, $passwordfromDB, $firstName);
+		mysqli_stmt_bind_result($stmt, $passwordfromDB, $saltfromDB);
 
 		if (mysqli_stmt_fetch($stmt)) {										// if there was a result
 	
-			if ($password == $passwordfromDB) {								// if the passwords match
+			$passwordhash = hash('sha256', $password);
+
+			$salt = $saltFromDB;
+
+			$finalHash = hash('sha256', $salt.$passwordhash);
+	
+			if ($finalhash == $passwordfromDB) {								// if the passwords match
 				$_SESSION['username'] = $username;						// store the value of the user logged in in the session
 				$_SESSION['logged-in'] = true;								// make the session logged in as true
 				echo "<p>You have successfully signed in.</p>";				// tell the user they have logged in and include a link to the admin page

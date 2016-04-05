@@ -93,8 +93,18 @@ $_SESSION['lat'] = $lat;
 <h1>Your Itinerary</h1>
 
 <?php
+//show login status in top right of page ?>
+<div align="right"><?php echo loginStatus()?></div>
+<p>&nbsp;</p>
+
+<div align="right">
+<?php
 echo itineraryStatus();
-print $cart
+?>
+</div>
+<p>&nbsp;</p>
+
+
 ?>
 
 </div>

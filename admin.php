@@ -30,9 +30,6 @@ session_start();
 			</div>
 			<?php
 			echo "<a href=\"index.php\">Homepage</a>";							// 	include links to home page and edit events page
-			echo "<br>";
-			echo "<br>";
-			echo "<a href=\"chooseEditEvent.php\">Edit Events</a>";
 		}
         else {
             echo "<p>You must be logged in to access this page</p>\n";						// if noone is logged in then show error message
