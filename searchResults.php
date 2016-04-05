@@ -9,7 +9,7 @@
 <body>
 <form id="SearchResults" action="searchResults.php" method="get">
 
-<h1>Search Results</h1>
+<div align="center"><h1>Search Results</h1></div>
 
 <?php
 include('./inc/connection.inc.php');	  // make database connection
@@ -24,6 +24,26 @@ $date = $_GET['date'];
 
 <div id="shoppingcart">
 <div align="right"><?php echo itineraryStatus()?></div>
+</div>
+
+<div id="searchBar">
+<div align="left">
+<p><h2>Search for Further Venues</h2></p>
+<label for="searchPlace">Please Enter the Search Location</label>
+<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
+&nbsp;&nbsp;
+<label for="category">Select Activity</label> 
+<select name="category" >
+   <option value="">Please Select</option>
+   <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
+   <option value="4bf58dd8d48988d18e941735">Comedy Club</option>
+</select>
+&nbsp;&nbsp;
+<label for="date">Select Date</label>
+<input type="date" name="date" id="date" maxlength="60" size="15" />
+&nbsp;&nbsp;
+<input type="submit" name="submit" class="action" value="Search Places" />
+</div>
 </div>
 
 <?php
