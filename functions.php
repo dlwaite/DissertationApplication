@@ -132,10 +132,10 @@ function itineraryContents() {
 			echo "".$venues->response->venue->location->lng."";
 			echo "</td><td>";
 			echo "<a href=\"itinerary.php?action=delete&id=".$venues->response->venue->id."\">Remove</a>";
-		    echo "</td></tr>";			  
-		}
-		echo "<a href=\"itinerary.php?action=removeAll\">Clear Itinerary</a>";
-		echo "</td></tr>";	
+		    echo "</td></tr>";	
+			echo "<a href=\"itinerary.php?action=removeAll\">Clear Itinerary</a>";
+			echo "</td></tr>";		  
+		}	
 		echo "</table>";
 	} else {
 		echo '<p>Your itinerary is empty.</p>';
