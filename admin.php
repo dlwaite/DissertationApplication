@@ -18,22 +18,27 @@ session_start();
         
 		<?php
 		
-		include('./inc/connection.inc.php');										// include database connection
-		include 'functions.php';											// include functions
+		include('./inc/connection.inc.php'); // include database connection
+		include 'functions.php';			 // include functions
 		
-        if (isset($_SESSION['logged-in']) && ($_SESSION['logged-in'])) {		// if someone is logged in and the logged in session is active
-			$username = $_SESSION['username'];									// create the username variable with the username which is logged in
+		// if someone is logged in and the logged in session is active
+        if (isset($_SESSION['logged-in']) && ($_SESSION['logged-in'])) {
+			// create the username variable with the username which is logged in		
+			$username = $_SESSION['username'];									
 			?>	
 			<div align="right">
             	<!-- echo out the username of who is logged in with a log out button next to it -->
-				<?php echo "<p>Hello user: $username"; echo "<input type=\"submit\" value=\"Log Out\" formaction=\"logout.php\"/></p>"; ?>
+				<?php echo "<p>Hello user: $username"; 
+				echo "<input type=\"submit\" value=\"Log Out\" formaction=\"logout.php\"/></p>"; ?>
 			</div>
 			<?php
-			echo "<a href=\"index.php\">Homepage</a>";							// 	include links to home page and edit events page
+			// 	include links to home page
+			echo "<a href=\"index.php\">Homepage</a>";							
 		}
         else {
-            echo "<p>You must be logged in to access this page</p>\n";						// if noone is logged in then show error message
-			echo "<input type=\"submit\" value=\"Log In\" formaction=\"login.php\" />";		// with a link to the log in page 
+			// if noone is logged in then show error message with a link to the log in page
+            echo "<p>You must be logged in to access this page</p>\n";						
+			echo "<input type=\"submit\" value=\"Log In\" formaction=\"login.php\" />";	 
         }
         ?>
     </form>
