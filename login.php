@@ -10,10 +10,12 @@
 <body>
 	<form id="logIn" action="loginProcess.php" method="post">									
 		<h1>Log In</h1>
+            <!-- create a username text box -->
             <p class="field"> <label for="username">Username: </label >
                 <input type="text" name="username" id="username" maxlength="254" />
             </p>
           
+     		<!-- create a password text box -->
             <p class="field">
                 <label for="password">Password</label>: 
                 <input type="password" name="password" id="password" maxlength="16" /></p>

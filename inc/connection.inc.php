@@ -13,8 +13,9 @@
 		$dbpassword = constant("DB_PASS"); // Mysql password 
 		$db_name = constant("DB_NAME"); // Database name 
 		
-		$mysqlCon = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($mysqlCon));
-		mysqli_select_db($mysqlCon, $db_name) or die("Error: " . mysqli_error($mysqlCon));
+		//connect via the mysqli connection with the details gathered above else show error
+		$conn = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($conn));
+		mysqli_select_db($conn, $db_name) or die("Error: " . mysqli_error($conn));
 		
 		
 		//Root User: adminQTSXp5f

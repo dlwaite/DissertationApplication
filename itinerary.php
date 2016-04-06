@@ -93,6 +93,7 @@ $_SESSION['lat'] = $lat;
 
 <div align="right">
 <?php
+//show the itinerary status in the top right of the page
 echo itineraryStatus();
 ?>
 </div>
@@ -101,16 +102,19 @@ echo itineraryStatus();
 <div id="searchBar">
 <div align="left">
 <p><h2>Search for Further Venues</h2></p>
+<!-- create the text box for the search location -->
 <label for="searchPlace">Please Enter the Search Location</label>
 <input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
 &nbsp;&nbsp;
+<!-- create the activity dropdown list -->
 <label for="category">Select Activity</label> 
 <select name="category" >
+  <!-- creating activities to search by under the entertainment heading -->
    <option value="">Please Select</option>
    <optgroup label="Entertainment">
-   <option value="4fceea171983d5d06c3e9823">Aquarium</option>
-   <option value="4bf58dd8d48988d1e1931735">Arcade</option>
-   <option value="4bf58dd8d48988d1e2931735">Art Gallery</option>
+   <option value="4fceea171983d5d06c3e9823">Aquarium</option> <!-- each option has the text to be shown for value but the value -->
+   <option value="4bf58dd8d48988d1e1931735">Arcade</option> <!-- used is the value that represents that category endpoint in -->
+   <option value="4bf58dd8d48988d1e2931735">Art Gallery</option> <!-- Foursquares server -->
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d17c941735">Casino</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>   
@@ -127,6 +131,7 @@ echo itineraryStatus();
    <option value="4bf58dd8d48988d193941735">Water Park</option>
    <option value="4bf58dd8d48988d17b941735">Zoo</option>
    </optgroup>
+   <!-- creating more activities to search by under the bars heading -->
    <optgroup label="Bars">
    <option value="56aa371ce4b08b9a8d57356c">Beer Bar</option>
    <option value="4bf58dd8d48988d117941735">Beer Garden</option>
@@ -139,6 +144,7 @@ echo itineraryStatus();
    <option value="4bf58dd8d48988d122941735">Whisky Bar</option>
    <option value="4bf58dd8d48988d123941735">Wine Bar</option>
    </optgroup>
+   <!-- creating more activities to search by under the food restaurants heading -->
    <optgroup label="Food Restaurants">
    <option value="4bf58dd8d48988d14e941735">American</option>
    <option value="4bf58dd8d48988d16b941735">Brazillian</option>
@@ -163,6 +169,7 @@ echo itineraryStatus();
    <option value="4f04af1f2fb6e1c99f3db0bb">Turkish</option>
    <option value="4bf58dd8d48988d14a941735">Vietnamese</option>
    </optgroup>
+   <!-- creating more activities to search by under the extras heading -->
    <optgroup label="Extras">
    <option value="4bf58dd8d48988d1e0931735">Coffee Shop</option>
    <option value="4bf58dd8d48988d11f941735">Nightclub</option>
@@ -174,6 +181,7 @@ echo itineraryStatus();
    </optgroup>
 </select>
 &nbsp;&nbsp;
+<!-- creating the date field -->
 <label for="date">Select Date</label>
 <input type="date" name="date" id="date" maxlength="60" size="15" />
 &nbsp;&nbsp;
@@ -187,18 +195,22 @@ echo itineraryStatus();
 <h2>Please check your Itinerary...</h2>
 
 <?php
+//show the itinerary contents
 echo itineraryContents();
 
 ?>
 
 <br><br>
 
+<!-- get the google map from the sources -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
 <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> 
 <script type="text/javascript"> 
+	
     $(document).ready(function() { initialize(); });
 
     function initialize() {
+		//set the map characteristics like a central location and a zoom level
         var map_options = {
             center: new google.maps.LatLng(33.84659,-84.35686),
             zoom: 14,
@@ -211,11 +223,13 @@ echo itineraryContents();
             content: 'loading'
         });
 
-        var t = [];
+		//set variables values
+	    var t = [];
         var x = [];
         var y = [];
         var h = [];
-
+		
+		//push the locations to be mapped
         t.push('Location Name 1');
         x.push(33.84659);
         y.push(-84.35686);
@@ -226,6 +240,9 @@ echo itineraryContents();
         y.push(-84.362125);
         h.push('<p><strong>Location Name 2</strong><br/>Address 2</p>');
 
+		//set a counter variable.. For each item that has been pushed to be mapped
+		//map that location on the map with the details used from what was pushed
+		//and use the currect number of which i is set to.
         var i = 0;
         for ( item in t ) {
             var m = new google.maps.Marker({

@@ -23,6 +23,7 @@ include 'functions.php';	  // make database connection
 <div align="right"><?php echo loginStatus()?></div>
 <p>&nbsp;</p>
 <div align="left">
+<!-- set the layout for the homepage -->
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <label><b>Step 1</b></label>  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,14 +44,16 @@ include 'functions.php';	  // make database connection
 <div align="left">
 <p class="field"> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- create the location search bar -->
 <input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <select name="category" >
+  <!-- creating activities to search by under the entertainment heading -->
    <option value="">Please Select</option>
    <optgroup label="Entertainment">
-   <option value="4fceea171983d5d06c3e9823">Aquarium</option>
-   <option value="4bf58dd8d48988d1e1931735">Arcade</option>
-   <option value="4bf58dd8d48988d1e2931735">Art Gallery</option>
+   <option value="4fceea171983d5d06c3e9823">Aquarium</option> <!-- each option has the text to be shown for value but the value -->
+   <option value="4bf58dd8d48988d1e1931735">Arcade</option> <!-- used is the value that represents that category endpoint in -->
+   <option value="4bf58dd8d48988d1e2931735">Art Gallery</option> <!-- Foursquares server -->
    <option value="4bf58dd8d48988d1e4931735">Bowling Alley</option>
    <option value="4bf58dd8d48988d17c941735">Casino</option>
    <option value="4bf58dd8d48988d18e941735">Comedy Club</option>   
@@ -67,6 +70,7 @@ include 'functions.php';	  // make database connection
    <option value="4bf58dd8d48988d193941735">Water Park</option>
    <option value="4bf58dd8d48988d17b941735">Zoo</option>
    </optgroup>
+   <!-- creating more activities to search by under the bars heading -->
    <optgroup label="Bars">
    <option value="56aa371ce4b08b9a8d57356c">Beer Bar</option>
    <option value="4bf58dd8d48988d117941735">Beer Garden</option>
@@ -79,6 +83,7 @@ include 'functions.php';	  // make database connection
    <option value="4bf58dd8d48988d122941735">Whisky Bar</option>
    <option value="4bf58dd8d48988d123941735">Wine Bar</option>
    </optgroup>
+   <!-- creating more activities to search by under the food restaurants heading -->
    <optgroup label="Food Restaurants">
    <option value="4bf58dd8d48988d14e941735">American</option>
    <option value="4bf58dd8d48988d16b941735">Brazillian</option>
@@ -103,6 +108,7 @@ include 'functions.php';	  // make database connection
    <option value="4f04af1f2fb6e1c99f3db0bb">Turkish</option>
    <option value="4bf58dd8d48988d14a941735">Vietnamese</option>
    </optgroup>
+   <!-- creating more activities to search by under the extras heading -->
    <optgroup label="Extras">
    <option value="4bf58dd8d48988d1e0931735">Coffee Shop</option>
    <option value="4bf58dd8d48988d11f941735">Nightclub</option>
@@ -114,6 +120,7 @@ include 'functions.php';	  // make database connection
    </optgroup>
 </select>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- create date field -->
 <input type="date" name="date" id="date" maxlength="60" size="20" />
 
 </p>
