@@ -13,12 +13,9 @@
 		$dbpassword = constant("DB_PASS"); // Mysql password 
 		$db_name = constant("DB_NAME"); // Database name 
 		
-		$db = "phpmyapp";
-		$username = "adminQTSXp5f@127.10.130.2";
-		$password = "agISJEaCtxUB";
 		//connect via the mysqli connection with the details gathered above else show error
-		$conn = mysqli_connect($dbhost, $username, $password, "", $dbport) or die("Error: " . mysqli_error($conn));
-		mysqli_select_db($conn, $db) or die("Error: " . mysqli_error($conn));
+		$conn = mysqli_connect($dbhost, $dbusername, $dbpassword, "", $dbport) or die("Error: " . mysqli_error($conn));
+		mysqli_select_db($conn, $db_name) or die("Error: " . mysqli_error($conn));
 		
 		
 		//Root User: adminQTSXp5f
