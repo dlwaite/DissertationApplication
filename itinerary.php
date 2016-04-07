@@ -11,6 +11,7 @@ $cart = $_SESSION['cart'];
 $lat = $_SESSION['lat'];
 $lng = $_SESSION['lng'];
 $action = $_GET['action'];
+$searchPlace = $_GET['searchPlace'];
 
 //use a switch tool to determine which case is used
 switch ($action) {
@@ -104,7 +105,7 @@ echo itineraryStatus();
 <p><h2>Search for Further Venues</h2></p>
 <!-- create the text box for the search location -->
 <label for="searchPlace">Please Enter the Search Location</label>
-<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" />
+<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" value="$searchPlace" />
 &nbsp;&nbsp;
 <!-- create the activity dropdown list -->
 <label for="category">Select Activity</label> 
