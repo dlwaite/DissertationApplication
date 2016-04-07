@@ -29,8 +29,8 @@ function loginStatus () {
 function logIn () {
 	// check to see that a password and username was entered in the 
 	// log in page and they were not left empty and request the values
-	$username = isset($_GET['username']) ? $_GET['username'] : null;
-	$password = isset($_GET['password']) ? $_GET['password'] : null;
+	$username = isset($_REQUEST['username']) ? $_REQUEST['username'] : null;
+	$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : null;
 
 	include('./inc/connection.inc.php');
 	connect();
