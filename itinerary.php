@@ -105,7 +105,7 @@ echo itineraryStatus();
 <p><h2>Search for Further Venues</h2></p>
 <!-- create the text box for the search location -->
 <label for="searchPlace">Please Enter the Search Location</label>
-<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" value="$searchPlace" />
+<input type="text" name="searchPlace" id="searchPlace" maxlength="254" size="30" value="<?php $searchPlace ?>" />
 &nbsp;&nbsp;
 <!-- create the activity dropdown list -->
 <label for="category">Select Activity</label> 
