@@ -178,11 +178,11 @@ foreach($venues->response->venues as $venue) { ?>
 							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
 						}
 					}
-					echo "Price ".$venue->price;
+					echo "Price ".$venue->price->tier." ".$venue->price->message;
 					echo "</b></a><br/>";
 					echo "Rating ".$venue->rating;
 					echo "</b></a><br/>";
-					echo "Number of likes ".$venue->likes;
+					echo "Number of likes ".$venue->likes->count;
 					echo "</b></a><br/>";
 
 					//show the location inforamtion of the venue
