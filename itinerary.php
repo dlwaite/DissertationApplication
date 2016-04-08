@@ -263,6 +263,9 @@ echo itineraryContents();
     }
 </script> 
 <div id="map_canvas" style="width:400px;height:400px;">Google Map</div> 
+<br>
+<br>
+<b><a href='index.php'>Back to Homepage</a></b>
 
 </body>
 </html>

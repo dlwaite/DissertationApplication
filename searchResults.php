@@ -178,6 +178,12 @@ foreach($venues->response->venues as $venue) { ?>
 							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
 						}
 					}
+					echo "Price ".$venue->price;
+					echo "</b></a><br/>";
+					echo "Rating ".$venue->rating;
+					echo "</b></a><br/>";
+					echo "Number of likes ".$venue->likes;
+					echo "</b></a><br/>";
 
 					//show the location inforamtion of the venue
                     echo "Location Information: ".$venue->location->lat." latitude , "
@@ -207,7 +213,7 @@ else {
 </div>
 <br>
 <br>
-<b><a href='index.php'>Back to Search Criteria</a></b>
+<b><a href='index.php'>Back to Homepage</a></b>
 
 </body>
 </html>
