@@ -189,6 +189,7 @@ foreach($venues->response->venues as $venue) { ?>
 					echo "</b></a><br/>";
 					echo "<strong>Longitude: </strong>".$venue->location->lng;
 					echo "</b></a><br/>";
+					echo "</b></a><br/>";
 					//create a link which when clicked will add the venue to the itinerary
 					//use the add action which is held at the top of the itinerary.php page
 					//pass through the id of the venue and location information when opening the page
