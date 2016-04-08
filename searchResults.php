@@ -178,15 +178,9 @@ foreach($venues->response->venues as $venue) { ?>
 							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
 						}
 					}
-					echo $venue->price->tier." ".$venue->price->message;
-					echo "</b></a><br/>";
-					echo $venue->rating;
-					echo "</b></a><br/>";
-					echo $venue->likes->count;
-					echo "</b></a><br/>";
-
+					
 					//show the location inforamtion of the venue
-                    echo "Location Information: ".$venue->location->lat." latitude , "
+                    echo "Location Information: ".$venue->location->postalCode.", ".$venue->location->lat." latitude, "
 						.$venue->location->lng." longitude";
 					
 					//create a link which when clicked will add the venue to the itinerary

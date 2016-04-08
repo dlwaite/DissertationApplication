@@ -138,7 +138,7 @@ function itineraryContents() {
 		// create a table
 		echo "<table border='1'>";
 		// with headings
-		echo "<tr><th>Name</th><th>Category</th><th>Latitude</th><th>Longitude</th><th>Remove</th></tr>";
+		echo "<tr><th>Name</th><th>Category</th><th>Postal Code</th><th>Latitude</th><th>Longitude</th><th>Remove</th></tr>";
 		
 		//foreach item in the items variable
 		foreach ($items as $id) {
@@ -178,6 +178,8 @@ function itineraryContents() {
 					}
 				}
 			//add the latitude in the next column and the longitude in the one after
+			echo "".$venues->response->venue->location->postalCode."";
+			echo "</td><td>";
 			echo "".$venues->response->venue->location->lat."";
 			echo "</td><td>";
 			echo "".$venues->response->venue->location->lng."";
