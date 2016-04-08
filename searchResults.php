@@ -175,12 +175,12 @@ foreach($venues->response->venues as $venue) { ?>
 						if(property_exists($venue->categories['0'],"name"))
 						{
 							//show the name of that category
-							echo ' <i> '.$venue->categories['0']->name.'</i><br/>';
+							echo ' <i><strong>Cateogry </strong> '.$venue->categories['0']->name.'</i><br/>';
 						}
 					}
 					
 					//show the location inforamtion of the venue
-                    echo "Location Information: ".$venue->location->postalCode.", ".$venue->location->lat." latitude, "
+                    echo "<strong>Location Information: </strong>".$venue->location->postalCode.", ".$venue->location->lat." latitude, "
 						.$venue->location->lng." longitude";
 					
 					//create a link which when clicked will add the venue to the itinerary
