@@ -165,7 +165,7 @@ foreach($venues->response->venues as $venue) { ?>
 					echo'<a href="https://foursquare.com/v/'.$venue->id.'" target="_blank"/><b>';
 					
 					//show the name of the venue
-					echo $venue->name;
+					echo "<strong>Venue Name: </strong>".$venue->name;
 					echo "</b></a><br/>";
 					
 					//if the category is not 0
@@ -180,8 +180,6 @@ foreach($venues->response->venues as $venue) { ?>
 					}
 					
 					//show the location inforamtion of the venue
-                    echo "</b></a><br/>";
-					echo "<strong><u>Location Information</u>:</strong>";
 					echo "</b></a><br/>";
 					echo "<strong>Postal Code: </strong>".$venue->location->postalCode;
 					echo "</b></a><br/>";
