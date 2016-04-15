@@ -201,7 +201,7 @@ echo itineraryContents();
 
 ?>
 
-<br><br>
+<br><br></div>
 
 <!-- get the google map from the sources -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script> 
@@ -269,4 +269,5 @@ echo itineraryContents();
 
 </body>
 </html>
+</form>
 <a href="http://www.beyondsecurity.com/vulnerability-scanner-verification/phpmyapp-dlwaite.rhcloud.com"><img src="https://seal.beyondsecurity.com/verification-images/phpmyapp-dlwaite.rhcloud.com/vulnerability-scanner-2.gif" alt="Website Security Test" border="0" /></a>
